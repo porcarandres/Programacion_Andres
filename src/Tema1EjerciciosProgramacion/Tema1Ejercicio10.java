@@ -1,3 +1,5 @@
+package Tema1EjerciciosProgramacion;
+
 import java.util.Scanner;
 
 public class Tema1Ejercicio10 {
