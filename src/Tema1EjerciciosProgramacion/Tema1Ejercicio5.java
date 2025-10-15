@@ -1,3 +1,5 @@
+package Tema1EjerciciosProgramacion;
+
 public class Tema1Ejercicio5 {
         public static void main(String[] args) {
             double a = 24%5;
