@@ -7,11 +7,11 @@ public class Tema2Ejercicio24 {
         Scanner sc = new Scanner(System.in);
         int aprobados = 0;
         int suspendidos = 0;
-        double nota;
+        double nota = 0;
 
         System.out.println("Introduce las notas de los alumnos (pon -5 para terminar):");
 
-        while (true) {
+        while (nota != -5) {
             System.out.print("Nota: ");
             nota = sc.nextDouble();
 

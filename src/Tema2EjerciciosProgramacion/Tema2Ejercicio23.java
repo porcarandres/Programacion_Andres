@@ -7,10 +7,11 @@ public class Tema2Ejercicio23 {
         Scanner sc = new Scanner(System.in);
         int suma = 0;
         int contador = 0;
+        int num=0;
 
-        while (true) {
+        while (num>=0) {
             System.out.print("Ingrese un número entero positivo y cuando quieras terminar negativo: ");
-            int num = sc.nextInt();
+            num = sc.nextInt();
 
             if (num < 0) {
                 break;
