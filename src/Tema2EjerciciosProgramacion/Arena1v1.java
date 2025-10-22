@@ -8,27 +8,63 @@ public class Arena1v1 {
         System.out.println("Bienvenidos a la arena gladiadores");
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
+        //Atributos
+        int vida1, defensa1, ataque1, velocidad1;
+        int vida2, defensa2, ataque2, velocidad2;
 
-        boolean valido1 = false, valido2 = false;
-
-        while (!valido1) {
-            System.out.println("Jugador1 inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500)");
+        //Jugador1
+        System.out.println("Jugador1 inserte su nombre:");
+        String jugador1 = sc.next();
+        do{
+            System.out.println(jugador1+"inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
             System.out.println("ATAQUE J1");
-            int ataqueJ1 = sc.nextInt();
+            ataque1 = sc.nextInt();
 
             System.out.println("DEFENSA J1");
-            int defensaJ1 = sc.nextInt();
+            defensa1 = sc.nextInt();
 
             System.out.println("VIDA J1");
-            int vidaJ1 = sc.nextInt();
+            vida1 = sc.nextInt();
 
             System.out.println("VELOCIDAD J1");
-            int velocidadJ1 = sc.nextInt();
-            if (velocidadJ1 < 0 || velocidadJ1 > 200 || vidaJ1 < 0 || vidaJ1 > 200 || defensaJ1 < 0 || defensaJ1 > 200 || ataqueJ1 < 0 || ataqueJ1 > 200) {
+            velocidad1 = sc.nextInt();
+
+            if (velocidad1 < 1 || velocidad1 > 200 || vida1 < 1 || vida1 > 200 || defensa1 < 1 || defensa1 > 200 || ataque1 < 1 || ataque1 > 200) {
                 System.out.println("no te pases de 200 en cada atributo");
-            } else if (velocidadJ1 + vidaJ1 + defensaJ1 + ataqueJ1 > 500) {
+            } else if (velocidad1 + vida1 + defensa1 + ataque1 > 500) {
                 System.out.println("no te pases de 500 entre todos");
             }
-        }
+
+        }while(vida1 < 1 || vida1 > 200 || velocidad1 < 1 || velocidad1 > 200 || defensa1 < 1 || defensa1 > 200 || ataque1 < 1 || ataque1 > 200);
+
+        //Jugador2
+        System.out.println("Jugador2 inserte su nombre:");
+        String jugador2 = sc.next();
+        do{
+            System.out.println(jugador2+"inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
+            System.out.println("ATAQUE J2");
+            ataque2 = sc.nextInt();
+
+            System.out.println("DEFENSA J2");
+            defensa2 = sc.nextInt();
+
+            System.out.println("VIDA J2");
+            vida2 = sc.nextInt();
+
+            System.out.println("VELOCIDAD J2");
+            velocidad2 = sc.nextInt();
+
+            if (velocidad2 < 1 || velocidad2 > 200 || vida2 < 1 || vida2 > 200 || defensa2 < 1 || defensa2 > 200 || ataque2 < 1 || ataque2 > 200) {
+                System.out.println("no te pases de 200 en cada atributo");
+            } else if (velocidad2 + vida2 + defensa2 + ataque2 > 500) {
+                System.out.println("no te pases de 500 entre todos");
+            }
+
+        }while(vida2 < 1 || vida2 > 200 || velocidad2 < 1 || velocidad2 > 200 || defensa2 < 1 || defensa2 > 200 || ataque2 < 1 || ataque2 > 200);
+
+        //Personajes Creados
+        System.out.println("Personajes creados:");
+        System.out.println("P1:"+jugador1+"//Atributos: || Vida"+vida1+"|| Ataque:"+ataque1+"|| Velocidad:"+velocidad1+"|| Defensa:"+defensa1);
+        System.out.println("P2:"+jugador2+"//Atributos: || Vida"+vida2+"|| Ataque:"+ataque2+"|| Velocidad:"+velocidad2+"|| Defensa:"+defensa2);
     }
 }
