@@ -72,7 +72,7 @@ public class Arena1v1 {
 
         //d1 o d2 = daño
         int d1,d2;
-
+        int siguiente= 0;
         //combate
         while (vida1 > 0 && vida2 > 0) {
             if (velocidad1 >= velocidad2) {
@@ -86,6 +86,8 @@ public class Arena1v1 {
                 d2 = (ataque2 -defensa1+ random.nextInt(10));
                 vida1 -= d2;
                 System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + Math.max(0, vida1));
+                siguiente= random.nextInt();
+
             } else {
                 // Turno del jugador 2
                 d2 =(ataque2 - defensa1+ random.nextInt(10));
@@ -97,6 +99,7 @@ public class Arena1v1 {
                 d1 = (ataque1 -defensa2+ random.nextInt(10));
                 vida2 -= d1;
                 System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + Math.max(0, vida2));
+                siguiente= random.nextInt();
             }
         }
     }
