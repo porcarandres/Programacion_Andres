@@ -7,7 +7,7 @@ public class Arena1v1 {
     public static void main(String[] args) {
         System.out.println("Bienvenidos a la arena gladiadores");
         Scanner sc = new Scanner(System.in);
-        Random random = new Random(10);
+        Random random = new Random();
 
         //Atributos
         int vida1, defensa1, ataque1, velocidad1;
@@ -17,7 +17,7 @@ public class Arena1v1 {
         System.out.println("Jugador1 inserte su nombre:");
         String jugador1 = sc.next();
         do{
-            System.out.println(jugador1+"inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
+            System.out.println(jugador1+" inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
             System.out.println("ATAQUE J1");
             ataque1 = sc.nextInt();
 
@@ -42,7 +42,7 @@ public class Arena1v1 {
         System.out.println("Jugador2 inserte su nombre:");
         String jugador2 = sc.next();
         do{
-            System.out.println(jugador2+"inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
+            System.out.println(jugador2+" inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
             System.out.println("ATAQUE J2");
             ataque2 = sc.nextInt();
 
@@ -81,13 +81,13 @@ public class Arena1v1 {
                 sc.nextLine();
 
                 // Turno del jugador 1
-                d1 = (ataque1 - defensa2+ random.nextInt());
+                d1 = (ataque1 - defensa2+ random.nextInt(10));
                 vida2 -= d1;
                 System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + Math.max(0, vida2));
                 if (vida2 <= 0) break;
 
                 // Turno del jugador 2
-                d2 = (ataque2 -defensa1+ random.nextInt());
+                d2 = (ataque2 -defensa1+ random.nextInt(10));
                 vida1 -= d2;
                 System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + Math.max(0, vida1));
 
@@ -96,13 +96,13 @@ public class Arena1v1 {
                 sc.nextLine();
 
                 // Turno del jugador 2
-                d2 =(ataque2 - defensa1+ random.nextInt());
+                d2 =(ataque2 - defensa1+ random.nextInt(10));
                 vida1 -= d2;
                 System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + Math.max(0, vida1));
                 if (vida1 <= 0) break;
 
                 // Turno del jugador 1
-                d1 = (ataque1 -defensa2+ random.nextInt());
+                d1 = (ataque1 -defensa2+ random.nextInt(10));
                 vida2 -= d1;
                 System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + Math.max(0, vida2));
 
@@ -116,4 +116,4 @@ public class Arena1v1 {
         }
     }
 }
-//añadir mas cosasA
+//añadir mas cosas
