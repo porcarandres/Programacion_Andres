@@ -7,21 +7,22 @@ public class Tema2Ejercicio26 {
         Scanner sc= new Scanner(System.in);
         System.out.print("Pon un número entero: ");
         int num = sc.nextInt();
-        boolean NumPrimo = true;
+        boolean numPrimo = true;
         if(num<=1){
-            NumPrimo=false;
+            numPrimo=false;
         }else{
             for(int i=2;i<num;i++){
                 if(num%i==0){
-                    NumPrimo=false;
+                    numPrimo=false;
                     break;
                 }
             }
         }
-        if (NumPrimo) {
+        if (numPrimo) {
             System.out.println(num + " es un numero primo.");
         } else {
             System.out.println(num + " no es primo.");
         }
     }
 }
+//a
