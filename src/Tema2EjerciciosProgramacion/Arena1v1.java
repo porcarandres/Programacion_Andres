@@ -93,9 +93,7 @@ public class Arena1v1 {
         System.out.println("P1:"+jugador1+"//Atributos: || Vida"+vida1+"|| Ataque:"+ataque1+"|| Velocidad:"+velocidad1+"|| Defensa:"+defensa1);
         System.out.println("P2:"+jugador2+"//Atributos: || Vida"+vida2+"|| Ataque:"+ataque2+"|| Velocidad:"+velocidad2+"|| Defensa:"+defensa2);
 
-        // limpiar el buffer antes del combate
         sc.nextLine();
-
         System.out.println("Comienza la batalla");
 
         // d1 o d2 = daño
@@ -107,12 +105,13 @@ public class Arena1v1 {
             sc.nextLine();
 
             // Mostrar estado actual de los jugadores
-            System.out.println(jugador1 + ": " + vida1 + " " + "-".repeat(vida1 / 5));
-            System.out.println(jugador2 + ": " + vida2 + " " + "-".repeat(vida2 / 5));
+            System.out.println(jugador1 + ": " + vida1 + " " + "-".repeat(vida1));
+            System.out.println(jugador2 + ": " + vida2 + " " + "-".repeat(vida2));
 
             if (velocidad1 >= velocidad2) {
+
                 // Turno del jugador 1
-                d1 = ataque1 - defensa2 / 2 + random.nextInt(30);
+                d1 = ataque1 - defensa2 + random.nextInt(15);
                 if (d1 < 5) {
                     d1 = 5;
                 }
@@ -126,7 +125,7 @@ public class Arena1v1 {
 
                 // Turno del jugador 2 solo si sigue con vida
                 if (vida2 > 0) {
-                    d2 = ataque2 - defensa1 / 2 + random.nextInt(30);
+                    d2 = ataque2 - defensa1+ random.nextInt(15);
                     if (d2 < 5) {
                         d2 = 5;
                     }
@@ -141,7 +140,7 @@ public class Arena1v1 {
 
             } else {
                 // Turno del jugador 2
-                d2 = ataque2 - defensa1 / 2 + random.nextInt(30);
+                d2 = ataque2 - defensa1 + random.nextInt(15);
                 if (d2 < 5) {
                     d2 = 5;
                 }
@@ -155,7 +154,7 @@ public class Arena1v1 {
 
                 // Turno del jugador 1 solo si sigue con vida
                 if (vida1 > 0) {
-                    d1 = ataque1 - defensa2 / 2 + random.nextInt(30);
+                    d1 = ataque1 - defensa2 + random.nextInt(15);
                     if (d1 < 5) {
                         d1 = 5;
                     }
