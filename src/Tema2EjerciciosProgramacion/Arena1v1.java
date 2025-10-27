@@ -93,74 +93,94 @@ public class Arena1v1 {
         System.out.println("P1:"+jugador1+"//Atributos: || Vida"+vida1+"|| Ataque:"+ataque1+"|| Velocidad:"+velocidad1+"|| Defensa:"+defensa1);
         System.out.println("P2:"+jugador2+"//Atributos: || Vida"+vida2+"|| Ataque:"+ataque2+"|| Velocidad:"+velocidad2+"|| Defensa:"+defensa2);
 
+        // limpiar el buffer antes del combate
+        sc.nextLine();
+
         System.out.println("Comienza la batalla");
 
-        //d1 o d2 = daño
-        int d1,d2;
+        // d1 o d2 = daño
+        int d1, d2;
 
-        //combate
+        // combate
         while (vida1 > 0 && vida2 > 0) {
+            System.out.print("Escribe 'siguiente' para continuar: ");
+            sc.nextLine();
+
+            // Mostrar estado actual de los jugadores
+            System.out.println(jugador1 + ": " + vida1 + " " + "-".repeat(vida1 / 5));
+            System.out.println(jugador2 + ": " + vida2 + " " + "-".repeat(vida2 / 5));
+
             if (velocidad1 >= velocidad2) {
-
-                System.out.print("Escribe siguiente para continuar: ");
-                sc.nextLine();
-
                 // Turno del jugador 1
+                d1 = ataque1 - defensa2 / 2 + random.nextInt(30);
+                if (d1 < 5) { /
+                    d1 = 5;
+                }
 
-                System.out.println(jugador1 + ":" + vida1 + " " + "-".repeat(vida1));
-                System.out.println(jugador2 + ":" + vida2 + " " + "-".repeat(vida2));
-
-                d1 = Math.max(5, ataque1 - defensa2 / 2 + random.nextInt(30));
                 vida2 -= d1;
-                System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + Math.max(0, vida2));
+                if (vida2 < 0) {
+                    vida2 = 0;
+                }
 
+                System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + vida2);
 
-                if (vida2 <= 0) {
-                    break;}
-                // Turno del jugador 2
+                // Turno del jugador 2 solo si sigue con vida
+                if (vida2 > 0) {
+                    d2 = ataque2 - defensa1 / 2 + random.nextInt(30);
+                    if (d2 < 5) {
+                        d2 = 5;
+                    }
 
-                System.out.println(jugador1 + ":" + vida1 + " " + "-".repeat(vida1));
-                System.out.println(jugador2 + ":" + vida2 + " " + "-".repeat(vida2));
+                    vida1 -= d2;
+                    if (vida1 < 0) {
+                        vida1 = 0;
+                    }
 
-                d2 = Math.max(5,ataque2 - defensa1/2 + random.nextInt(30));
-                vida1 -= d2;
-                System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + Math.max(0, vida1));
-
+                    System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + vida1);
+                }
 
             } else {
-                System.out.print("Escribe siguiente para continuar: ");
-                sc.nextLine();
-
                 // Turno del jugador 2
+                d2 = ataque2 - defensa1 / 2 + random.nextInt(30);
+                if (d2 < 5) {
+                    d2 = 5;
+                }
 
-                System.out.println(jugador1 + ":" + vida1 + " " + "-".repeat(vida1));
-                System.out.println(jugador2 + ":" + vida2 + " " + "-".repeat(vida2));
-
-                d2 = Math.max(5,ataque2 - defensa1/2 + random.nextInt(30));
                 vida1 -= d2;
-                System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + Math.max(0, vida1));
+                if (vida1 < 0) {
+                    vida1 = 0;
+                }
 
+                System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + vida1);
 
-                if (vida1 <= 0){
-                break;}
+                // Turno del jugador 1 solo si sigue con vida
+                if (vida1 > 0) {
+                    d1 = ataque1 - defensa2 / 2 + random.nextInt(30);
+                    if (d1 < 5) {
+                        d1 = 5;
+                    }
 
-                // Turno del jugador 1
-                System.out.println(jugador1 + ":" + vida1 + " " + "-".repeat(vida1));
-                System.out.println(jugador2 + ":" + vida2 + " " + "-".repeat(vida2));
+                    vida2 -= d1;
+                    if (vida2 < 0) {
+                        vida2 = 0;
+                    }
 
-                d1 = Math.max(5, ataque1 - defensa2 / 2 + random.nextInt(30));
-                vida2 -= d1;
-                System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + Math.max(0, vida2));
-
-
+                    System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + vida2);
+                }
             }
         }
-            if (vida1 == 0) {
-                System.out.println("El ganador es:" + jugador1);
-            } else {
-                System.out.println("El ganador es:" + jugador2);
 
+        //Fin batalla
+        System.out.println("Batalla terminada!");
+
+        if (vida1 <= 0 && vida2 <= 0) {
+            System.out.println("Empate Ambos cayeron en combate ");
+        } else if (vida1 <= 0) {
+            System.out.println("El ganador es: " + jugador2);
+        } else {
+            System.out.println("El ganador es: " + jugador1);
         }
+
     }
 }
 
