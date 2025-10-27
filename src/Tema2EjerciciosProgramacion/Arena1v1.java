@@ -139,7 +139,8 @@ public class Arena1v1 {
             System.out.println("El ganador es:"+jugador2);
         }
     }
-}
+    }
+    }
 }
 
 //añadir mas cosas
