@@ -113,7 +113,7 @@ public class Arena1v1 {
             if (velocidad1 >= velocidad2) {
                 // Turno del jugador 1
                 d1 = ataque1 - defensa2 / 2 + random.nextInt(30);
-                if (d1 < 5) { /
+                if (d1 < 5) {
                     d1 = 5;
                 }
 
