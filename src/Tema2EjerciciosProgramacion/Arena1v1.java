@@ -183,4 +183,4 @@ public class Arena1v1 {
     }
 }
 
-//añadir mas,
+//añadir mas,lpl,kkop
