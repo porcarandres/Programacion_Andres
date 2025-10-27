@@ -12,12 +12,24 @@ public class Arena1v1 {
         //Atributos
         int vida1, defensa1, ataque1, velocidad1;
         int vida2, defensa2, ataque2, velocidad2;
+        int opcion;
 
         //Jugador1
         System.out.println("Jugador1 inserte su nombre:");
         String jugador1 = sc.next();
+        System.out.println("¿Quieres que los atributos sean aleatorios? (0 = sí, otro número = manual)");
+        opcion = sc.nextInt();
+
+        if (opcion == 0) {
+            ataque1 = random.nextInt(120);
+            defensa1 = random.nextInt(120);
+            vida1 = random.nextInt(120);
+            velocidad1 = random.nextInt(120) ;
+            System.out.println("Atributos aleatorios para " + jugador1 + ":");
+            System.out.println("Ataque: " + ataque1 + " | Defensa: " + defensa1 + " | Vida: " + vida1 + " | Velocidad: " + velocidad1);
+        } else {
         do{
-            System.out.println(jugador1+" inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
+            System.out.println(jugador1+" inserte sus atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500");
             System.out.println("ATAQUE J1");
             ataque1 = sc.nextInt();
 
@@ -41,8 +53,20 @@ public class Arena1v1 {
         //Jugador2
         System.out.println("Jugador2 inserte su nombre:");
         String jugador2 = sc.next();
+
+            System.out.println("¿Quieres que los atributos sean aleatorios? (0 = sí, otro número = manual)");
+            opcion = sc.nextInt();
+            if (opcion == 0) {
+                ataque2 = random.nextInt(120);
+                defensa2 = random.nextInt(120);
+                vida2 = random.nextInt(120);
+                velocidad2 = random.nextInt(120) ;
+                System.out.println("Atributos aleatorios para " + jugador1 + ":");
+                System.out.println("Ataque: " + ataque2 + " | Defensa: " + defensa2 + " | Vida: " + vida2 + " | Velocidad: " + velocidad2);
+            } else {
         do{
-            System.out.println(jugador2+" inserte sus atributos (no te pases de 200 en cada y maximo entre todos 500");
+
+            System.out.println(jugador2+" inserte sus atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500");
             System.out.println("ATAQUE J2");
             ataque2 = sc.nextInt();
 
@@ -116,4 +140,6 @@ public class Arena1v1 {
         }
     }
 }
+}
+
 //añadir mas cosas
