@@ -21,10 +21,10 @@ public class Arena1v1 {
         opcion = sc.nextInt();
 
         if (opcion == 0) {
-            ataque1 = random.nextInt(200);
-            defensa1 = random.nextInt(170);
-            vida1 = random.nextInt(200);
-            velocidad1 = random.nextInt(170);
+            ataque1 = random.nextInt(200 - 80 + 1) + 60;
+            defensa1 = random.nextInt(200 - 80 + 1) + 60;
+            vida1 = random.nextInt(200 - 80 + 1) + 60;
+            velocidad1 = random.nextInt(200 - 80 + 1) + 60;
             System.out.println("Atributos aleatorios para " + jugador1 + ":");
             System.out.println("Ataque: " + ataque1 + " | Defensa: " + defensa1 + " | Vida: " + vida1 + " | Velocidad: " + velocidad1);
 
@@ -58,10 +58,10 @@ public class Arena1v1 {
         System.out.println("¿Quieres que los atributos sean aleatorios? (0 = sí, otro número = manual)");
         opcion = sc.nextInt();
         if (opcion == 0) {
-            ataque2 = random.nextInt(200);
-            defensa2 = random.nextInt(170);
-            vida2 = random.nextInt(200);
-            velocidad2 = random.nextInt(170);
+            ataque2 = random.nextInt(200 - 80 + 1) + 60;
+            defensa2 = random.nextInt(200 - 80 + 1) + 60;
+            vida2 = random.nextInt(200 - 80 + 1) + 60;
+            velocidad2 = random.nextInt(200 - 80 + 1) + 60;
             System.out.println("Atributos aleatorios para " + jugador2 + ":");
             System.out.println("Ataque: " + ataque2 + " | Defensa: " + defensa2 + " | Vida: " + vida2 + " | Velocidad: " + velocidad2);
         } else {
