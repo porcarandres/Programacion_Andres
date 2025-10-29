@@ -93,14 +93,11 @@ public class Arena1v1 {
         System.out.println("P1:" + jugador1 + "//Atributos: || Vida" + vida1 + "|| Ataque:" + ataque1 + "|| Velocidad:" + velocidad1 + "|| Defensa:" + defensa1);
         System.out.println("P2:" + jugador2 + "//Atributos: || Vida" + vida2 + "|| Ataque:" + ataque2 + "|| Velocidad:" + velocidad2 + "|| Defensa:" + defensa2);
 
-        sc.nextLine();
         System.out.println("Comienza la batalla");
 
         boolean defensaActiva1 = false;
         boolean defensaActiva2 = false;
         int curacion;
-
-        // d1 o d2 = daño
         int d1, d2;
 
         // combate
@@ -108,28 +105,30 @@ public class Arena1v1 {
             System.out.print("Escribe 'siguiente' para continuar: ");
             sc.nextLine();
 
-            // Mostrar estado actual de los jugadores
-            System.out.println(jugador1 + ": " + vida1 + " " + "-".repeat(vida1));
-            System.out.println(jugador2 + ": " + vida2 + " " + "-".repeat(vida2));
+            // Mostrar estado actual
+            System.out.println("\n--- Estado actual ---");
+            System.out.println(jugador1 + ": " + vida1 + " " + "\uD83C\uDF7A".repeat(vida1));
+            System.out.println(jugador2 + ": " + vida2 + " " + "\uD83C\uDF7A".repeat(vida2));
 
+            // Si jugador 1 es más rápido, empieza él
             if (velocidad1 >= velocidad2) {
 
                 // Turno del jugador 1
                 System.out.println("Turno de: " + jugador1);
-                System.out.println("1. Atacar, 2. Curarse, 3.Defenderse");
-
+                System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                 int accion1 = sc.nextInt();
 
                 if (accion1 == 1) {
                     d1 = ataque1 - defensa2 + random.nextInt(15);
-                    if (d1 < 5) {
-                        d1 = 5;
+                    if (d1 < 5) d1 = 5;
+                    if (defensaActiva2) {
+                        d1 /= 2;
+                        defensaActiva2 = false;
+                        System.out.println(jugador2 + " se defendió y redujo el daño a la mitad!");
                     }
                     vida2 -= d1;
-                    if (vida2 < 0) {
-                        vida2 = 0;
-                    }
-                    System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + vida2);
+                    if (vida2 < 0) vida2 = 0;
+                    System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante: " + vida2);
                 } else if (accion1 == 2) {
                     curacion = random.nextInt(30);
                     vida1 += curacion;
@@ -137,12 +136,12 @@ public class Arena1v1 {
                     System.out.println(jugador1 + " se cura " + curacion + " puntos. Vida total: " + vida1);
                 } else if (accion1 == 3) {
                     defensaActiva1 = true;
-                    System.out.println(jugador1 + " se prepara para defenderse del próximo ataque");
+                    System.out.println(jugador1 + " se prepara para defenderse del próximo ataque.");
                 }
 
                 // Turno del jugador 2 solo si sigue con vida
                 if (vida2 > 0) {
-                    System.out.println("\nTurno de " + jugador2);
+                    System.out.println("\nTurno de: " + jugador2);
                     System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                     int accion2 = sc.nextInt();
 
@@ -156,7 +155,7 @@ public class Arena1v1 {
                         }
                         vida1 -= d2;
                         if (vida1 < 0) vida1 = 0;
-                        System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + vida1);
+                        System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante: " + vida1);
                     } else if (accion2 == 2) {
                         curacion = random.nextInt(30);
                         vida2 += curacion;
@@ -166,73 +165,73 @@ public class Arena1v1 {
                         defensaActiva2 = true;
                         System.out.println(jugador2 + " se prepara para defenderse del próximo ataque.");
                     }
+                }
 
-                } else {
-                    // Turno del jugador 2
-                    System.out.println("Turno de: " + jugador2);
+            } else {
+                // Si jugador 2 es más rápido
+                System.out.println("\nTurno de: " + jugador2);
+                System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
+                int accion2 = sc.nextInt();
+
+                if (accion2 == 1) {
+                    d2 = ataque2 - defensa1 + random.nextInt(15);
+                    if (d2 < 5) d2 = 5;
+                    if (defensaActiva1) {
+                        d2 /= 2;
+                        defensaActiva1 = false;
+                        System.out.println(jugador1 + " se defendió y redujo el daño a la mitad!");
+                    }
+                    vida1 -= d2;
+                    if (vida1 < 0) vida1 = 0;
+                    System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante: " + vida1);
+                } else if (accion2 == 2) {
+                    curacion = random.nextInt(30);
+                    vida2 += curacion;
+                    if (vida2 > 200) vida2 = 200;
+                    System.out.println(jugador2 + " se cura " + curacion + " puntos. Vida total: " + vida2);
+                } else if (accion2 == 3) {
+                    defensaActiva2 = true;
+                    System.out.println(jugador2 + " se prepara para defenderse del próximo ataque.");
+                }
+
+                // Turno del jugador 1 solo si sigue con vida
+                if (vida1 > 0) {
+                    System.out.println("\nTurno de: " + jugador1);
                     System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
-                    int accion2 = sc.nextInt();
+                    int accion1 = sc.nextInt();
 
-                    if (accion2 == 1) {
-                        d2 = ataque2 - defensa1 + random.nextInt(15);
-                        if (d2 < 5) d2 = 5;
-                        if (defensaActiva1) {
-                            d2 /= 2;
-                            defensaActiva1 = false;
-                            System.out.println(jugador1 + " se defendió y redujo el daño a la mitad!");
+                    if (accion1 == 1) {
+                        d1 = ataque1 - defensa2 + random.nextInt(15);
+                        if (d1 < 5) d1 = 5;
+                        if (defensaActiva2) {
+                            d1 /= 2;
+                            defensaActiva2 = false;
+                            System.out.println(jugador2 + " se defendió y redujo el daño a la mitad!");
                         }
-                        vida1 -= d2;
-                        if (vida1 < 0) vida1 = 0;
-                        System.out.println(jugador2 + " ataca a " + jugador1 + " causando " + d2 + " de daño. Vida restante de " + jugador1 + ": " + vida1);
-                    } else if (accion2 == 2) {
+                        vida2 -= d1;
+                        if (vida2 < 0) vida2 = 0;
+                        System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante: " + vida2);
+                    } else if (accion1 == 2) {
                         curacion = random.nextInt(30);
-                        vida2 += curacion;
-                        if (vida2 > 200) vida2 = 200;
-                        System.out.println(jugador2 + " se cura " + curacion + " puntos. Vida total: " + vida2);
-                    } else if (accion2 == 3) {
-                        defensaActiva2 = true;
-                        System.out.println(jugador2 + " se prepara para defenderse del próximo ataque.");
-                    }
-                    // Turno del jugador 1 solo si sigue con vida
-                    if (vida1 > 0) {
-                        System.out.println("\nTurno de " + jugador1);
-                        System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
-                         accion1 = sc.nextInt();
-                        if (accion1 == 1) {
-                            d1 = ataque1 - defensa2 + random.nextInt(15);
-                            if (d1 < 5) d1 = 5;
-                            if (defensaActiva2) {
-                                d1 /= 2;
-                                defensaActiva2 = false;
-                                System.out.println(jugador2 + " se defendió y redujo el daño a la mitad!");
-                            }
-                            vida2 -= d1;
-                            if (vida2 < 0) vida2 = 0;
-                            System.out.println(jugador1 + " ataca a " + jugador2 + " causando " + d1 + " de daño. Vida restante de " + jugador2 + ": " + vida2);
-                        } else if (accion1 == 2) {
-                            curacion = random.nextInt(30);
-                            vida1 += curacion;
-                            if (vida1 > 200) vida1 = 200;
-                            System.out.println(jugador1 + " se cura " + curacion + " puntos. Vida total: " + vida1);
-                        } else if (accion1 == 3) {
-                            defensaActiva1 = true;
-                            System.out.println(jugador1 + " se prepara para defenderse del próximo ataque.");
-                        }
+                        vida1 += curacion;
+                        if (vida1 > 200) vida1 = 200;
+                        System.out.println(jugador1 + " se cura " + curacion + " puntos. Vida total: " + vida1);
+                    } else if (accion1 == 3) {
+                        defensaActiva1 = true;
+                        System.out.println(jugador1 + " se prepara para defenderse del próximo ataque.");
                     }
                 }
             }
+        }
 
-            //Fin batalla
-            System.out.println("Batalla terminada!");
-
-            if (vida1 <= 0 && vida2 <= 0) {
-                System.out.println("Empate Ambos cayeron en combate ");
-            } else if (vida1 <= 0) {
-                System.out.println("El ganador es: " + jugador2);
-            } else {
-                System.out.println("El ganador es: " + jugador1);
-            }
-
+        // Resultado final
+        System.out.println("\uD83C\uDF7A"+"Fin de la batalla "+"\uD83C\uDF7A");
+        if (vida1 <= 0 && vida2 <= 0) {
+            System.out.println("Empate.");
+        } else if (vida1 <= 0) {
+            System.out.println("El ganador es: " + jugador2);
+        } else {
+            System.out.println("El ganador es: " + jugador1);
         }
     }
 }
