@@ -197,7 +197,7 @@ public class Arena1v1 {
                     if (vida1 > 0) {
                         System.out.println("\nTurno de " + jugador1);
                         System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
-                        int accion1 = sc.nextInt();
+                         accion1 = sc.nextInt();
                         if (accion1 == 1) {
                             d1 = ataque1 - defensa2 + random.nextInt(15);
                             if (d1 < 5) d1 = 5;
