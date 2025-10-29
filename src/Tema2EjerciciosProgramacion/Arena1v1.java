@@ -93,28 +93,30 @@ public class Arena1v1 {
         System.out.println("P1:" + jugador1 + "//Atributos: || Vida" + vida1 + "|| Ataque:" + ataque1 + "|| Velocidad:" + velocidad1 + "|| Defensa:" + defensa1);
         System.out.println("P2:" + jugador2 + "//Atributos: || Vida" + vida2 + "|| Ataque:" + ataque2 + "|| Velocidad:" + velocidad2 + "|| Defensa:" + defensa2);
 
-        System.out.println("Comienza la batalla");
+        System.out.println("\n Comienza la batalla");
 
         boolean defensaActiva1 = false;
         boolean defensaActiva2 = false;
         int curacion;
         int d1, d2;
+        int ronda = 0;
 
         // combate
         while (vida1 > 0 && vida2 > 0) {
-            System.out.print("Escribe 'siguiente' para continuar: ");
+            ronda++;
+            System.out.print("Ronda"+ronda);
             sc.nextLine();
 
             // Mostrar estado actual
             System.out.println("\n--- Estado actual ---");
-            System.out.println(jugador1 + ": " + vida1 + " " + "\uD83C\uDF7A".repeat(vida1));
-            System.out.println(jugador2 + ": " + vida2 + " " + "\uD83C\uDF7A".repeat(vida2));
+            System.out.println(jugador1 + ": " + vida1 + " " + "\uD83C\uDF7A".repeat(vida1/10));
+            System.out.println(jugador2 + ": " + vida2 + " " + "\uD83C\uDF7A".repeat(vida2/10));
 
             // Si jugador 1 es más rápido, empieza él
             if (velocidad1 >= velocidad2) {
 
                 // Turno del jugador 1
-                System.out.println("Turno de: " + jugador1);
+                System.out.println("\n Turno de: " + jugador1);
                 System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                 int accion1 = sc.nextInt();
 
@@ -141,7 +143,7 @@ public class Arena1v1 {
 
                 // Turno del jugador 2 solo si sigue con vida
                 if (vida2 > 0) {
-                    System.out.println("\nTurno de: " + jugador2);
+                    System.out.println("\n Turno de: " + jugador2);
                     System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                     int accion2 = sc.nextInt();
 
@@ -169,7 +171,7 @@ public class Arena1v1 {
 
             } else {
                 // Si jugador 2 es más rápido
-                System.out.println("\nTurno de: " + jugador2);
+                System.out.println("\n Turno de: " + jugador2);
                 System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                 int accion2 = sc.nextInt();
 
@@ -196,7 +198,7 @@ public class Arena1v1 {
 
                 // Turno del jugador 1 solo si sigue con vida
                 if (vida1 > 0) {
-                    System.out.println("\nTurno de: " + jugador1);
+                    System.out.println("\n Turno de: " + jugador1);
                     System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                     int accion1 = sc.nextInt();
 
