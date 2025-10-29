@@ -15,7 +15,7 @@ public class Arena1v1 {
         int opcion;
 
         //Jugador1
-        System.out.println("Jugador1 inserte su nombre:");
+        System.out.println("Jugador1 inserta tu nombre:");
         String jugador1 = sc.next();
         System.out.println("¿Quieres que los atributos sean aleatorios? (0 = sí, otro número = manual)");
         opcion = sc.nextInt();
@@ -30,7 +30,7 @@ public class Arena1v1 {
 
         } else {
             do {
-                System.out.println(jugador1 + " inserte sus atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500");
+                System.out.println(jugador1 + " inserta los atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500)");
                 System.out.println("ATAQUE J1");
                 ataque1 = sc.nextInt();
 
@@ -52,7 +52,7 @@ public class Arena1v1 {
             } while (vida1 < 1 || vida1 > 200 || velocidad1 < 1 || velocidad1 > 200 || defensa1 < 1 || defensa1 > 200 || ataque1 < 1 || ataque1 > 200);
         }
         //Jugador2
-        System.out.println("Jugador2 inserte su nombre:");
+        System.out.println("Jugador2 inserta tu nombre:");
         String jugador2 = sc.next();
 
         System.out.println("¿Quieres que los atributos sean aleatorios? (0 = sí, otro número = manual)");
@@ -67,7 +67,7 @@ public class Arena1v1 {
         } else {
             do {
 
-                System.out.println(jugador2 + " inserte sus atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500");
+                System.out.println(jugador2 + " inserta los atributos (no te pases, de entre 1-200 en cada y maximo entre todos 500)");
                 System.out.println("ATAQUE J2");
                 ataque2 = sc.nextInt();
 
@@ -108,11 +108,11 @@ public class Arena1v1 {
             sc.nextLine();
 
             // Mostrar estado actual
-            System.out.println("\n--- Estado actual ---");
+            System.out.println("\n Estado actual");
             System.out.println(jugador1 + ": " + vida1 + " " + "\uD83C\uDF7A".repeat(vida1/10));
             System.out.println(jugador2 + ": " + vida2 + " " + "\uD83C\uDF7A".repeat(vida2/10));
 
-            // Si jugador 1 es más rápido, empieza él
+            // Si jugador 1 es mas rapido
             if (velocidad1 >= velocidad2) {
 
                 // Turno del jugador 1
@@ -126,7 +126,7 @@ public class Arena1v1 {
                     if (defensaActiva2) {
                         d1 /= 2;
                         defensaActiva2 = false;
-                        System.out.println(jugador2 + " se defendió y redujo el daño a la mitad!");
+                        System.out.println(jugador2 + " se defendió y redujo el daño a la mitad");
                     }
                     vida2 -= d1;
                     if (vida2 < 0) vida2 = 0;
@@ -153,7 +153,7 @@ public class Arena1v1 {
                         if (defensaActiva1) {
                             d2 /= 2;
                             defensaActiva1 = false;
-                            System.out.println(jugador1 + " se defendió y redujo el daño a la mitad!");
+                            System.out.println(jugador1 + " se defendió y redujo el daño a la mitad");
                         }
                         vida1 -= d2;
                         if (vida1 < 0) vida1 = 0;
@@ -170,7 +170,7 @@ public class Arena1v1 {
                 }
 
             } else {
-                // Si jugador 2 es más rápido
+                // Si jugador 2 es mas rapido
                 System.out.println("\n Turno de: " + jugador2);
                 System.out.println("1. Atacar, 2. Curarse, 3. Defenderse");
                 int accion2 = sc.nextInt();
@@ -181,7 +181,7 @@ public class Arena1v1 {
                     if (defensaActiva1) {
                         d2 /= 2;
                         defensaActiva1 = false;
-                        System.out.println(jugador1 + " se defendió y redujo el daño a la mitad!");
+                        System.out.println(jugador1 + " se defendió y redujo el daño a la mitad");
                     }
                     vida1 -= d2;
                     if (vida1 < 0) vida1 = 0;
@@ -208,7 +208,7 @@ public class Arena1v1 {
                         if (defensaActiva2) {
                             d1 /= 2;
                             defensaActiva2 = false;
-                            System.out.println(jugador2 + " se defendió y redujo el daño a la mitad!");
+                            System.out.println(jugador2 + " se defendió y redujo el daño a la mitad");
                         }
                         vida2 -= d1;
                         if (vida2 < 0) vida2 = 0;
@@ -237,4 +237,4 @@ public class Arena1v1 {
         }
     }
 }
-//y
+//ywadwad
