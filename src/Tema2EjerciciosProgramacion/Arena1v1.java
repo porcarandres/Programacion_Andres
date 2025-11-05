@@ -124,10 +124,10 @@ public class Arena1v1 {
                     if (d1 < 10) d1 = 10;
 
                     //Golpe critico
-                    double critChance1 = 0.2;
-                    double critMultiplier1 = 1.5;
-                    if (random.nextDouble() < critChance1) {
-                        d1 = (int) (d1 * critMultiplier1);
+                    double critPorce1 = 0.2;
+                    double critMulti1 = 1.5;
+                    if (random.nextDouble() < critPorce1) {
+                        d1 = (int) (d1 * critMulti1);
                         System.out.println("💥¡Golpe crítico de " + jugador1 + "! 💥");
                     }
 
@@ -168,10 +168,10 @@ public class Arena1v1 {
                         if (d2 < 10) d2 = 10;
 
                         //Golpe critico
-                        double critChance2 = 0.2;
-                        double critMultiplier2 = 1.5;
-                        if (random.nextDouble() < critChance2) {
-                            d2 = (int) (d2 * critMultiplier2);
+                        double critPorce2 = 0.2;
+                        double critMulti2 = 1.5;
+                        if (random.nextDouble() < critPorce2) {
+                            d2 = (int) (d2 * critMulti2);
                             System.out.println("💥 ¡Golpe crítico de " + jugador2 + "! 💥");
                         }
 
@@ -214,10 +214,10 @@ public class Arena1v1 {
                     if (d2 < 10) d2 = 10;
 
                     //Golpe critico
-                    double critChance2 = 0.2;
-                    double critMultiplier2 = 1.5;
-                    if (random.nextDouble() < critChance2) {
-                        d2 = (int) (d2 * critMultiplier2);
+                    double critPorce2 = 0.2;
+                    double critMulti2 = 1.5;
+                    if (random.nextDouble() < critPorce2) {
+                        d2 = (int) (d2 * critMulti2);
                         System.out.println("💥 ¡Golpe crítico de " + jugador2 + "! 💥");
                     }
 
@@ -258,10 +258,10 @@ public class Arena1v1 {
                         if (d1 < 10) d1 = 10;
 
                         //Golpe critico
-                        double critChance1 = 0.2;
-                        double critMultiplier1 = 1.5;
-                        if (random.nextDouble() < critChance1) {
-                            d1 = (int) (d1 * critMultiplier1);
+                        double critPorce1 = 0.2;
+                        double critMulti1 = 1.5;
+                        if (random.nextDouble() < critPorce1) {
+                            d1 = (int) (d1 * critMulti1);
                             System.out.println("💥 ¡Golpe crítico de " + jugador1 + "! 💥");
                         }
 
