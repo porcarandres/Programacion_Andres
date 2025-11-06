@@ -11,6 +11,8 @@ public class Tema3Ejercicio2 {
         }
     }
     public static void main(String[] args) {
+        Tema3Ejercicio1.numberSign(1);
+        Tema3Ejercicio1.main(args);
         Scanner sc = new Scanner(System.in);
 
         System.out.println("ESCRIBE TU EDAD:");
@@ -25,4 +27,3 @@ public class Tema3Ejercicio2 {
         }
     }
 }
-
