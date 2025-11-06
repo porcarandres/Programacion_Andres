@@ -2,7 +2,7 @@ package Tema3_ProgramacionModular;
 
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class Tema3Ejercicio1 {
     public static int numberSign(int a){
         if(a > 0){
             return 1;
