@@ -110,7 +110,7 @@ public class Arena1v1 {
             System.out.println(jugador1 + ": " + vida1 + " " + "\uD83C\uDF7A".repeat(vida1/10));
             System.out.println(jugador2 + ": " + vida2 + " " + "\uD83C\uDF7A".repeat(vida2/10));
 
-            // Si jugador 1 es más rápido
+            // Si jugador 1 es mas rápido
             if (velocidad1 >= velocidad2) {
 
                 //Turno jug1
@@ -202,7 +202,7 @@ public class Arena1v1 {
                 }
 
             } else {
-                // Si jugador 2 es más rapido
+                // Si jugador 2 es mas rapido
                 //Turno jug2
                 System.out.println("\nTurno de: " + jugador2);
                 System.out.println("1. Atacar  2. Defenderse  3. Curarse");
