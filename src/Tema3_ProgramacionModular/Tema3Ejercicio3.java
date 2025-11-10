@@ -2,7 +2,8 @@ package Tema3_ProgramacionModular;
 
 import java.util.Scanner;
 
-public class Tema3Ejercicio3 {
+public class
+Tema3Ejercicio3 {
 
     public static boolean validRadius(double radius) {
     return radius > 0;
@@ -13,7 +14,7 @@ public class Tema3Ejercicio3 {
     }
 
     public static double calculateCircleArea(double radius) {
-        return Math.PI * Math.pow(radius, 2);
+        return Math.PI * (radius * radius);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
