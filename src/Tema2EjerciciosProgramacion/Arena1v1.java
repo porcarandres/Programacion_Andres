@@ -49,7 +49,7 @@ public class Arena1v1 {
                     System.out.println("no te pases de 500 entre todos");
                 }
 
-            } while (vida1 < 1 || vida1 > 200 || velocidad1 < 1 || velocidad1 > 200 || defensa1 < 1 || defensa1 > 200 || ataque1 < 1 || ataque1 > 200);
+            } while (vida1 < 1 || vida1 > 200 || velocidad1 < 1 || velocidad1 > 200 || defensa1 < 1 || defensa1 > 200 || ataque1 < 1 || ataque1 > 200 || velocidad1 + vida1 + defensa1 + ataque1 > 500);
         }
         //Jugador2
         System.out.println("Jugador2 inserta tu nombre:");
@@ -86,7 +86,7 @@ public class Arena1v1 {
                     System.out.println("no te pases de 500 entre todos");
                 }
 
-            } while (vida2 < 1 || vida2 > 200 || velocidad2 < 1 || velocidad2 > 200 || defensa2 < 1 || defensa2 > 200 || ataque2 < 1 || ataque2 > 200);
+            } while (vida2 < 1 || vida2 > 200 || velocidad2 < 1 || velocidad2 > 200 || defensa2 < 1 || defensa2 > 200 || ataque2 < 1 || ataque2 > 200 || velocidad2 + vida2 + defensa2 + ataque2 > 500 );
         }
         //Personajes Creados
         System.out.println("Personajes creados:");
