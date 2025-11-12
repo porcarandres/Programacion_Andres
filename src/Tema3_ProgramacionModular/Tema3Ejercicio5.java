@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class Tema3Ejercicio5 {
     public static void Multiplicar(){
-        System.out.println("Dame un numero entero entre 1 y 10: ");
-    }
-    public static void main(String[] args){
-        Multiplicar();
         Scanner sc= new Scanner(System.in);
         int a;
         a = sc.nextInt();
@@ -16,5 +12,9 @@ public class Tema3Ejercicio5 {
                 System.out.println(a + " x " + i + " = " + (a * i));
             }
         }
+    }
+    public static void main(String[] args){
+        System.out.println("Dame un numero entero entre 1 y 10: ");
+        Multiplicar();
     }
 }
