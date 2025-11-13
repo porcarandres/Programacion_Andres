@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 import static Tema3_ProgramacionModular.Tema3Ejercicio2.isAdult;
 import static Tema3_ProgramacionModular.Tema3Ejercicio3.*;
+import static Tema3_ProgramacionModular.Tema3Ejercicio4.*;
+import static Tema3_ProgramacionModular.Tema3Ejercicio5.Multiplicar;
+import static Tema3_ProgramacionModular.Tema3Ejercicio6.tablas;
+import static Tema3_ProgramacionModular.Tema3Ejercicio7.esPrimo;
+import static Tema3_ProgramacionModular.Tema3Ejercicio8.ComprFecha;
+import static Tema3_ProgramacionModular.Tema3Ejercicio9.creaTriangulo;
 
 public class Tema3Ejercicio10 {
     public static void main(String[] args) {
@@ -63,24 +69,67 @@ public class Tema3Ejercicio10 {
                     break;
                 case 4:
                     Tema3Ejercicio4.showMenu();
-                    Tema3Ejercicio4.dollar2Euro(1);
-                    Tema3Ejercicio4.euro2Dollar(1);
-                    Tema3Ejercicio4.main(args);
+                    System.out.println("Selecciona una opcion de las 3: ");
+                    opcion = sc.nextInt();
+                    double cantidad;
+                    if (opcion == 1){
+                        System.out.println("Introduce euros:");
+                        cantidad = sc.nextDouble();
+                        System.out.println(cantidad + " euros, son " + euro2Dollar(cantidad) + " dolares.");
+                    } else if (opcion == 2) {
+                        System.out.println("Introduce dolares:");
+                        cantidad = sc.nextDouble();
+                        System.out.println(cantidad + " dolares, son " + dollar2Euro(cantidad) + " euros.");
+                    } else if (opcion == 3) {
+                        System.out.println("Fin");
+                    }else{
+                        System.out.println("No valido");
+                    }
                     break;
                 case 5:
-
+                    System.out.println("Dame un numero entero entre 1 y 10: ");
+                    Multiplicar();
                     break;
                 case 6:
-
+                    System.out.println("Ejercicio tablas de numeros de 1 al 10\n");
+                    tablas();
                     break;
                 case 7:
+                    System.out.println("Pon numeros positivos y si quieres acabar pon 0: ");
+                    int numero;
 
+                    do {
+                        numero = sc.nextInt();
+
+                        if (numero > 0) {
+                            if (esPrimo(numero)) {
+                                System.out.println(numero + " es primo.");
+                            } else {
+                                System.out.println(numero + " no es primo.");
+                            }
+                        } else if (numero < 0) {
+                            System.out.println("Por favor, introduce solo números positivos.");
+                        }
+
+                    } while (numero != 0);
+
+                    System.out.println("Programa finalizado.");
                     break;
                 case 8:
-
+                    ComprFecha();
                     break;
                 case 9:
+                    System.out.print("Introduce el símbolo para el triángulo: ");
+                    char simbolo = sc.next().charAt(0);
 
+                    System.out.print("Introduce la cantidad de filas: ");
+                    int filas = sc.nextInt();
+
+                    if (filas > 0) {
+                        creaTriangulo(simbolo, filas);
+                    } else {
+                        System.out.println("El número de filas debe ser mayor que 0.");
+                    }
                     break;
                 case 0:
                     System.out.println("Fin del programa.");
