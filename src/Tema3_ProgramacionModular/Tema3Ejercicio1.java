@@ -20,11 +20,11 @@ public class Tema3Ejercicio1 {
         number= numberSign(number);
 
         if(number > 0){
-            System.out.println(number);
+            System.out.println("es positivo");
         } else if (number < 0) {
-            System.out.println(number);
+            System.out.println("Es negativo");
         }else{
-            System.out.println(number);
+            System.out.println("0");
         }
     }
 }

@@ -5,10 +5,10 @@ import java.util.Scanner;
 import static Tema3_ProgramacionModular.Tema3Ejercicio2.isAdult;
 import static Tema3_ProgramacionModular.Tema3Ejercicio3.*;
 import static Tema3_ProgramacionModular.Tema3Ejercicio4.*;
-import static Tema3_ProgramacionModular.Tema3Ejercicio5.Multiplicar;
+import static Tema3_ProgramacionModular.Tema3Ejercicio5.multiplicar;
 import static Tema3_ProgramacionModular.Tema3Ejercicio6.tablas;
 import static Tema3_ProgramacionModular.Tema3Ejercicio7.esPrimo;
-import static Tema3_ProgramacionModular.Tema3Ejercicio8.ComprFecha;
+import static Tema3_ProgramacionModular.Tema3Ejercicio8.comprFecha;
 import static Tema3_ProgramacionModular.Tema3Ejercicio9.creaTriangulo;
 
 public class Tema3Ejercicio10 {
@@ -16,7 +16,7 @@ public class Tema3Ejercicio10 {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         int opcion;
-        ShowMenu();
+        showMenu();
         opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
@@ -88,7 +88,7 @@ public class Tema3Ejercicio10 {
                     break;
                 case 5:
                     System.out.println("Dame un numero entero entre 1 y 10: ");
-                    Multiplicar();
+                    multiplicar(1);
                     break;
                 case 6:
                     System.out.println("Ejercicio tablas de numeros de 1 al 10\n");
@@ -116,7 +116,7 @@ public class Tema3Ejercicio10 {
                     System.out.println("Programa finalizado.");
                     break;
                 case 8:
-                    ComprFecha();
+                    comprFecha();
                     break;
                 case 9:
                     System.out.print("Introduce el símbolo para el triángulo: ");
@@ -140,7 +140,7 @@ public class Tema3Ejercicio10 {
 
 
     }
-    public static void ShowMenu(){
+    public static void showMenu(){
         System.out.println("\n===== MENÚ PRINCIPAL =====");
         System.out.println("1) Mostrar el signo de un número");
         System.out.println("2) Comprobar si el usuario es mayor de edad");
