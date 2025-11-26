@@ -28,7 +28,7 @@ public class Ejercicio10 {
                     System.out.println("Area del cuadrado: " + squareArea(lado));
                     break;
                 case 2:
-                    System.out.print("Introduce base y altura del rectángulo: ");
+                    System.out.print("Introduce base y altura del rectangulo: ");
                     int base = sc.nextInt();
                     int altura = sc.nextInt();
                     System.out.println("Perimetro del rectangulo: " + rectanglePerimeter(base, altura));
@@ -37,8 +37,8 @@ public class Ejercicio10 {
                 case 3:
                     System.out.print("Introduce el radio del circulo: ");
                     int radio = sc.nextInt();
-                    System.out.println("Perímetro del círculo: " + circlePerimeter(radio));
-                    System.out.println("Área del círculo: " + circleArea(radio));
+                    System.out.println("Perimetro del circulo: " + circlePerimeter(radio));
+                    System.out.println("Area del circulo: " + circleArea(radio));
                     break;
                 case 4:
                     System.out.print("Introduce un número entero: ");
@@ -69,7 +69,7 @@ public class Ejercicio10 {
                     System.out.println("FIN");
                     break;
                 default:
-                    System.out.println("Opción no valida.");
+                    System.out.println("Opciun no valida.");
             }
         } while (opcion != 0);
 
