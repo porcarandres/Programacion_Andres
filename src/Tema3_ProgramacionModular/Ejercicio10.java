@@ -8,18 +8,18 @@ public class Ejercicio10 {
         Scanner sc = new Scanner(System.in);
         int opcion;
         System.out.println("\n MENU ");
-        System.out.println("1. Perimetro y área del cuadrado");
-        System.out.println("2. Perimetro y área del rectangulo");
-        System.out.println("3. Perimetro y área del circulo");
-        System.out.println("4. Propiedades de un número (primo, digitos, factorial)");
-        System.out.println("5. Ecuación cuadrática (ax^2 + bx + c = 0)");
-        System.out.println("6. Suma de digitos de un numero");
-        System.out.println("0. Salir");
-        System.out.print("Elige una opción: ");
+        System.out.println("1.Perimetro y area del cuadrado");
+        System.out.println("2.Perimetro y area del rectangulo");
+        System.out.println("3.Perimetro y area del circulo");
+        System.out.println("4.Propiedades de un numero (primo, digitos, factorial)");
+        System.out.println("5.Ecuación cuadratica (ax^2 + bx + c = 0)");
+        System.out.println("6.Suma de digitos de un numero");
+        System.out.println("0.Salir");
+
 
         do {
+            System.out.print("Elige una opcion: ");
             opcion = sc.nextInt();
-
             switch (opcion) {
                 case 1:
                     System.out.print("Introduce el lado del cuadrado: ");
@@ -45,14 +45,14 @@ public class Ejercicio10 {
                     int num = sc.nextInt();
                     System.out.println(num + " es primo? " + esPrimo(num));
                     System.out.println(num + " no es primo? " + noPrimo(num));
-                    System.out.println("Número de dígitos: " + contadorDigitos(num));
-                    System.out.println("Dígitos pares: " + numerosPares(num));
-                    System.out.println("Dígitos impares: " + numerosImpares(num));
+                    System.out.println("Numero de digitos: " + contadorDigitos(num));
+                    System.out.println("Digitos pares: " + numerosPares(num));
+                    System.out.println("Digitos impares: " + numerosImpares(num));
                     System.out.println("Factorial: " + factorial(num));
                     System.out.println("Factorial recursivo: " + factorialRecursiva(num));
                     break;
                 case 5:
-                    System.out.print("Introduce los coeficientes a, b y c: ");
+                    System.out.print("Introduce a, b y c: ");
                     int a = sc.nextInt();
                     int b = sc.nextInt();
                     int c = sc.nextInt();
@@ -61,13 +61,13 @@ public class Ejercicio10 {
                 case 6:
                     System.out.print("Introduce un número: ");
                     int n = sc.nextInt();
-                    System.out.println("Suma de dígitos: " + sumaDigitos(n));
+                    System.out.println("Suma de digitos: " + sumaDigitos(n));
                     break;
                 case 0:
-                    System.out.println("Saliendo...");
+                    System.out.println("FIN");
                     break;
                 default:
-                    System.out.println("Opción no válida, intenta de nuevo.");
+                    System.out.println("Opción no valida.");
             }
         } while (opcion != 0);
 
