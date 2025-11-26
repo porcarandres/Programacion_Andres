@@ -7,7 +7,7 @@ public class Ejercicio10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion;
-        System.out.println("\n MENU ");
+        System.out.println(" MENU ");
         System.out.println("1.Perimetro y area del cuadrado");
         System.out.println("2.Perimetro y area del rectangulo");
         System.out.println("3.Perimetro y area del circulo");
