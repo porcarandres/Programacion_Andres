@@ -18,24 +18,24 @@ public class Ejercicio10 {
 
 
         do {
-            System.out.print("Elige una opcion: ");
+            System.out.print("Elige una opcion del menu:");
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.print("Introduce el lado del cuadrado: ");
                     int lado = sc.nextInt();
-                    System.out.println("Perímetro del cuadrado: " + squarePerimeter(lado));
-                    System.out.println("Área del cuadrado: " + squareArea(lado));
+                    System.out.println("Perimetro del cuadrado: " + squarePerimeter(lado));
+                    System.out.println("Area del cuadrado: " + squareArea(lado));
                     break;
                 case 2:
                     System.out.print("Introduce base y altura del rectángulo: ");
                     int base = sc.nextInt();
                     int altura = sc.nextInt();
-                    System.out.println("Perímetro del rectángulo: " + rectanglePerimeter(base, altura));
-                    System.out.println("Área del rectángulo: " + rectangleArea(base, altura));
+                    System.out.println("Perimetro del rectangulo: " + rectanglePerimeter(base, altura));
+                    System.out.println("Area del rectangulo: " + rectangleArea(base, altura));
                     break;
                 case 3:
-                    System.out.print("Introduce el radio del círculo: ");
+                    System.out.print("Introduce el radio del circulo: ");
                     int radio = sc.nextInt();
                     System.out.println("Perímetro del círculo: " + circlePerimeter(radio));
                     System.out.println("Área del círculo: " + circleArea(radio));
@@ -52,9 +52,11 @@ public class Ejercicio10 {
                     System.out.println("Factorial recursivo: " + factorialRecursiva(num));
                     break;
                 case 5:
-                    System.out.print("Introduce a, b y c: ");
+                    System.out.print("Introduce a: ");
                     int a = sc.nextInt();
+                    System.out.print("Introduce b: ");
                     int b = sc.nextInt();
+                    System.out.print("Introduce c: ");
                     int c = sc.nextInt();
                     System.out.println("Soluciones: " + solucionesQuadraticas(a, b, c));
                     break;
