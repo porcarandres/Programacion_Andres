@@ -122,7 +122,7 @@ public class MyMath {
         System.out.println("Factorial: " + MyMath.factorial(num));
         System.out.println("Factorial recursivo: " + MyMath.factorialRecursiva(num));
 
-        System.out.println("Pon 3 numeros enteros:");
+        System.out.println("Pon 3 numeros (mejor si son enteros):");
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
         int num3 = sc.nextInt();
