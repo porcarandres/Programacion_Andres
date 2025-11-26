@@ -96,39 +96,4 @@ public class MyMath {
         }
         return suma;
     }
-    public static void main(String[] args) {
-
-        System.out.println("Perimetro del cuadrado: " + MyMath.squarePerimeter(8));
-        System.out.println("Area del cuadrado: " + MyMath.squareArea(8));
-
-        System.out.println("Perimetro del rectangulo: " + MyMath.rectanglePerimeter(5, 8));
-        System.out.println("Area del rectangulo: " + MyMath.rectangleArea(5, 8));
-
-        System.out.println("Perimetro del circulo: " + MyMath.circlePerimeter(8));
-        System.out.println("Area del circulo: " + MyMath.circleArea(8));
-
-
-        System.out.println("Pon un numero entero:");
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-
-        System.out.println(num + " el numero es primo? " + MyMath.esPrimo(num));
-        System.out.println(num + " no es primo? " + MyMath.noPrimo(num));
-
-        System.out.println("Numero de digitos: " + MyMath.contadorDigitos(num));
-        System.out.println("Digitos pares: " + MyMath.numerosPares(num));
-        System.out.println("Digitos impares: " + MyMath.numerosImpares(num));
-
-        System.out.println("Factorial: " + MyMath.factorial(num));
-        System.out.println("Factorial recursivo: " + MyMath.factorialRecursiva(num));
-
-        System.out.println("Pon 3 numeros (mejor si son enteros):");
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int num3 = sc.nextInt();
-
-        System.out.println("Soluciones de la ecuacion (x^2 + 2x - 3 = 0): " + MyMath.solucionesQuadraticas(num1, num2, num3));
-
-        System.out.println("Suma de los digitos de " + num + ": " + MyMath.sumaDigitos(num));
-    }
 }
