@@ -29,7 +29,8 @@ public class MyMath {
                 return false;
         }
         return true;
-    }public static boolean noPrimo(int num) {
+    }
+    public static boolean noPrimo(int num) {
         return !esPrimo(num);}
 
     public static int contadorDigitos(int num) {
@@ -37,8 +38,10 @@ public class MyMath {
         int contador = 0;
 
         while (num > 0) {
-            if ((num % 10) % 2 != 0) contador++;
+
             num /= 10;
+            contador++;
+
         }
 
         return contador;
