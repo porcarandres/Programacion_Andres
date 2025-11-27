@@ -15,10 +15,7 @@ public class Ejercicio10 {
         System.out.println("5.Ecuación cuadratica (ax^2 + bx + c = 0)");
         System.out.println("6.Suma de digitos de un numero");
         System.out.println("0.Salir");
-
-
-        do {
-            System.out.print("Elige una opcion del menu:");
+        System.out.print("Elige una opcion del menu:");
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
@@ -71,9 +68,6 @@ public class Ejercicio10 {
                 default:
                     System.out.println("Opciun no valida.");
             }
-        } while (opcion != 0);
-
-        sc.close();
     }
 }
 
