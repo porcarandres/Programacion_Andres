@@ -99,4 +99,4 @@ public class MyMath {
         }
         return suma;
     }
-}//fin (conectado con el Ejercicio10)
+}
