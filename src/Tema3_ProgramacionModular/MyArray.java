@@ -20,6 +20,15 @@ public class MyArray {
         }return max;
     }
 
+    public static int minArray(int[] gerom){
+        int min = gerom[0];
+        for (int i = 0; i < gerom.length; i++) {
+            if(gerom[i] < min){
+                min =gerom[i];
+            }
+        }return min;
+    }
+
     public static void main(String[] args){
         showMenu();
         Scanner sc = new Scanner(System.in);
@@ -32,6 +41,9 @@ public class MyArray {
             case 2: int[] numero = new int[]{3, 7, 2, 9, 5};
                 System.out.println("Máximo: " + maxArray(numero));
                 break;
+            case 3: int[] n = new int[]{3,7,2,9,5};
+                System.out.println("Minimo: "+ minArray(n));
+                break;
 
         }
 
@@ -40,6 +52,7 @@ public class MyArray {
         System.out.println(" Menu ");
         System.out.println("1 - Mostrar Array");
         System.out.println("2 - Max Array");
+        System.out.println("3 - Min Array");
         System.out.println("Elige una opcion: ");
     }
 }
