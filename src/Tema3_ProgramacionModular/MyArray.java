@@ -39,10 +39,10 @@ public class MyArray {
                 mostrarArray(gerom);
                 break;
             case 2: int[] numero = new int[]{3, 7, 2, 9, 5};
-                System.out.println("Máximo: " + maxArray(numero));
+                System.out.println("Máximo array {3, 7, 2, 9, 5}: " + maxArray(numero));
                 break;
             case 3: int[] n = new int[]{3,7,2,9,5};
-                System.out.println("Minimo: "+ minArray(n));
+                System.out.println("Minimo array {3, 7, 2, 9, 5}: "+ minArray(n));
                 break;
 
         }
