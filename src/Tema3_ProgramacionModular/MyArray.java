@@ -10,7 +10,6 @@ public class MyArray {
         }
         System.out.println();
     }
-
     public static int maxArray(int[] a){
         int max = a[0];
         for (int i = 0; i < a.length; i++) {
