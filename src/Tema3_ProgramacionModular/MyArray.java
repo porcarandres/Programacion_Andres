@@ -70,6 +70,13 @@ public class MyArray {
         }
         return invertido;
     }
+    public static void invertirArrayP(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+    }
     public static void main(String[] args){
         showMenu();
         Scanner sc = new Scanner(System.in);
@@ -121,6 +128,15 @@ public class MyArray {
                 int[] invertido= invertirArray(n1);
                 mostrarArray(invertido);
                 break;
+            case 10:
+                System.out.println("Array original:");
+                mostrarArray(n1);
+                invertirArrayP(n1);
+                System.out.println("Array invertido (procedimiento):");
+                mostrarArray(n1);
+                break;
+            case 11:
+
         }
 
     }
@@ -134,6 +150,8 @@ public class MyArray {
         System.out.println("6 - Sumar Vectores");
         System.out.println("7 - Restar Vectores");
         System.out.println("8 - Escalar Vectores");
+        System.out.println("9 - Funcion que invierte array");
+        System.out.println("10 - Procedimiento invierte array");
         System.out.println("Elige una opcion: ");
     }
 }
