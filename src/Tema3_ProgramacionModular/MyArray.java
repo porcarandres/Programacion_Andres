@@ -114,7 +114,6 @@ public class MyArray {
                 System.out.println("ERROR: n2 debe tener el mismo tamaño que n1 (" + n1.length + "). Inténtalo otra vez.\n");
             }
         } while (n2.length != n1.length);
-
         switch (opcion){
             case 1:
                 mostrarArray(n1);
