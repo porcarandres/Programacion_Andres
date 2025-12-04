@@ -63,6 +63,13 @@ public class MyArray {
         }
         return producto;
     }
+    public static int[] invertirArray(int[] array) {
+        int[] invertido = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            invertido[i] = array[array.length - 1 - i];
+        }
+        return invertido;
+    }
     public static void main(String[] args){
         showMenu();
         Scanner sc = new Scanner(System.in);
@@ -107,6 +114,13 @@ public class MyArray {
                 mostrarArray(n1);
                 mostrarArray(n2);
                 System.out.println("El producto escalar de los dos vectores es: "+producto);
+                break;
+            case 9:
+                mostrarArray(n1);
+                System.out.println("El array invertido es: ");
+                int[] invertido= invertirArray(n1);
+                mostrarArray(invertido);
+                break;
         }
 
     }
