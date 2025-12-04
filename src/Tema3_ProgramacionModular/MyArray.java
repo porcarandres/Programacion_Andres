@@ -43,9 +43,6 @@ public class MyArray {
         return false;
     }
     public static int[] sumarVectores(int[] vectorA, int[] vectorB){
-        if (vectorA.length != vectorB.length) {
-            System.out.println("Error: Los vectores deben tener la misma longitud");
-        }
         int[] resultado = new int[vectorA.length];
         for (int i = 0; i < vectorA.length; i++) {
             resultado[i] = vectorA[i] + vectorB[i];
@@ -53,16 +50,19 @@ public class MyArray {
         return resultado;
     }
     public static int[] restarVectores(int[] vectorA, int[] vectorB){
-        if (vectorA.length != vectorB.length) {
-            System.out.println("Error: Los vectores deben tener la misma longitud");
-        }
         int[] resultado = new int[vectorA.length];
         for (int i = 0; i < vectorA.length; i++) {
             resultado[i] = vectorA[i] - vectorB[i];
         }
         return resultado;
     }
-
+    public static int escalarVectores(int[] vectorA, int[] vectorB){
+        int producto = 0;
+        for (int i = 0; i < vectorA.length; i++) {
+            producto += vectorA[i] * vectorB[i];
+        }
+        return producto;
+    }
     public static void main(String[] args){
         showMenu();
         Scanner sc = new Scanner(System.in);
@@ -102,6 +102,11 @@ public class MyArray {
                 int[] resultadoresta = restarVectores(n1, n2);
                 mostrarArray(resultadoresta);
                 break;
+            case 8:
+                int producto = escalarVectores(n1,n2);
+                mostrarArray(n1);
+                mostrarArray(n2);
+                System.out.println("El producto escalar de los dos vectores es: "+producto);
         }
 
     }
@@ -114,6 +119,7 @@ public class MyArray {
         System.out.println("5 - Buscar numero en Array");
         System.out.println("6 - Sumar Vectores");
         System.out.println("7 - Restar Vectores");
+        System.out.println("8 - Escalar Vectores");
         System.out.println("Elige una opcion: ");
     }
 }
