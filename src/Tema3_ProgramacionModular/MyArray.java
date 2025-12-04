@@ -77,26 +77,56 @@ public class MyArray {
             array[array.length - 1 - i] = temp;
         }
     }
+    public static boolean esCapicua(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            if (array[i] != array[array.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int[] leerArray(Scanner sc){
+        System.out.print("Introduce el tamaño del array: ");
+        int tam = sc.nextInt();
+
+        int[] array = new int[tam];
+
+        for (int i = 0; i < tam; i++) {
+            System.out.print("Elemento " + (i+1) + ": ");
+            array[i] = sc.nextInt();
+        }
+        return array;
+    }
     public static void main(String[] args){
         showMenu();
         Scanner sc = new Scanner(System.in);
         int opcion = sc.nextInt();
 
-        int[] n1 = new int[]{3, 7, 2, 9, 5};
-        int[] n2 = new int[]{9, 5, 3, 2, 1};
+        System.out.println("Introduce los valores del array n1:");
+        int[] n1 = leerArray(sc);
+
+        int[] n2;
+        do {
+            System.out.println("Introduce los valores del array n2 (debe tener " + n1.length + " elementos):");
+            n2 = leerArray(sc);
+
+            if (n2.length != n1.length) {
+                System.out.println("ERROR: n2 debe tener el mismo tamaño que n1 (" + n1.length + "). Inténtalo otra vez.\n");
+            }
+        } while (n2.length != n1.length);
 
         switch (opcion){
             case 1:
                 mostrarArray(n1);
                 break;
             case 2:
-                System.out.println("Máximo array {3, 7, 2, 9, 5}: " + maxArray(n1));
+                System.out.println("Máximo array n1: " + maxArray(n1));
                 break;
             case 3:
-                System.out.println("Minimo array {3, 7, 2, 9, 5}: "+ minArray(n1));
+                System.out.println("Minimo array n1: "+ minArray(n1));
                 break;
             case 4:
-                System.out.println("Media array {3, 7, 2, 9, 5}: " + mediaArray(n1));
+                System.out.println("Media array n1: " + mediaArray(n1));
                 break;
             case 5:
                 System.out.println("Inserta numero buscado");
@@ -108,13 +138,11 @@ public class MyArray {
                 }break;
             case 6:
                 System.out.println("La suma de los dos vectores es: ");
-                int[] resultadoSuma = sumarVectores(n1, n2);
-                mostrarArray(resultadoSuma);
+                mostrarArray(sumarVectores(n1, n2));
                 break;
             case 7:
                 System.out.println("La resta de los dos vectores es: ");
-                int[] resultadoresta = restarVectores(n1, n2);
-                mostrarArray(resultadoresta);
+                mostrarArray(restarVectores(n1, n2));
                 break;
             case 8:
                 int producto = escalarVectores(n1,n2);
@@ -136,9 +164,14 @@ public class MyArray {
                 mostrarArray(n1);
                 break;
             case 11:
-
+                System.out.println("Array:");
+                mostrarArray(n1);
+                if (esCapicua(n1)) {
+                    System.out.println("El array es capicúa.");
+                } else {
+                    System.out.println("El array no es capicúa.");
+                }break;
         }
-
     }
     public static void showMenu(){
         System.out.println(" Menu ");
@@ -152,6 +185,7 @@ public class MyArray {
         System.out.println("8 - Escalar Vectores");
         System.out.println("9 - Funcion que invierte array");
         System.out.println("10 - Procedimiento invierte array");
+        System.out.println("11 - Array capicua");
         System.out.println("Elige una opcion: ");
     }
 }
