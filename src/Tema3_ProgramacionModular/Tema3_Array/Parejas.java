@@ -26,7 +26,7 @@ public class Parejas {
             }
             System.out.println();
             System.out.println("------------------------------------------");
-            System.out.println("Ingresa la posicion de la PRIMERA carta que quieres elegir: (1-20)");
+            System.out.println("Ingresa la posicion de la primera carta que quieres elegir: (1-20)");
             int indice1 = sc.nextInt() - 1;
             if (indice1 < 0 || indice1 > 19) {
                 System.out.println("Esa posicion NO es valida. Intenta de nuevo.");
@@ -39,7 +39,7 @@ public class Parejas {
                 continue;
             }
             if (indice1 == indice2) {
-                System.out.println("Debes elegir dos posiciones DIFERENTES.");
+                System.out.println("Debes elegir dos posiciones diferentes.");
                 continue;
             }
             System.out.println("\nHas destapado:");
