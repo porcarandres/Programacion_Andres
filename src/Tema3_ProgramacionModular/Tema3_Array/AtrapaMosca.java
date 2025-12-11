@@ -1,4 +1,4 @@
-package Tema3_ProgramacionModular;
+package Tema3_ProgramacionModular.Tema3_Array;
 
 import java.util.Random;
 import java.util.Scanner;
