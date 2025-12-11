@@ -10,13 +10,13 @@ public class Buscaminas {
         int cantidadMinas = 5;
         char[][] tablero = new char[filas][columnas];
 
-        // Llenar tablero vacío
+        //Lenar de no mina el tablero
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 tablero[i][j] = '-';
             }
         }
-        // PONER MINAS
+        // poner minas en el tablero
         int minasColocadas = 0;
         while (minasColocadas < cantidadMinas) {
             int f = (int)(Math.random() * filas);
@@ -26,7 +26,7 @@ public class Buscaminas {
                 minasColocadas++;
             }
         }
-        // JUEGO
+        // juego
         Scanner scanner = new Scanner(System.in);
         boolean juegoActivo = true;
 
@@ -40,13 +40,11 @@ public class Buscaminas {
             System.out.print("Ingresa Columna (0-4): ");
             int colUsuario = scanner.nextInt();
 
-            // 1. VERIFICACIÓN (Aquí estaba el error)
+            // 1. Verificacion
             if (filaUsuario < 0 || filaUsuario >= filas || colUsuario < 0 || colUsuario >= columnas) {
                 System.out.println("¡Coordenadas fuera de rango! Intenta de nuevo.");
                 continue;
             }
-
-            // 2. LÓGICA DEL JUEGO
             if (tablero[filaUsuario][colUsuario] == '*') {
                 // Caso: Mina
                 System.out.println("\n💥");
