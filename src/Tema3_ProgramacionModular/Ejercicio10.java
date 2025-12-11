@@ -1,4 +1,4 @@
-package Tema3_ProgramacionModular.Tema3_Array;
+package Tema3_ProgramacionModular;
 
 import java.util.Scanner;
 import static Tema3_ProgramacionModular.MyMath.*;
