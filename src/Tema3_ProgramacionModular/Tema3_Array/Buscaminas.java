@@ -3,72 +3,92 @@ package Tema3_ProgramacionModular.Tema3_Array;
 import java.util.Scanner;
 
 public class Buscaminas {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            String[] tableroOculto = new String[20];
-            String[] tableroJuego = new String[20];
-            for (int i = 0; i < 20; i++) {
-                tableroJuego[i] = "*";
-            }
-            int minasColocadas = 0;
-            while (minasColocadas < 6) {
-                int posicionAleatoria = (int)(Math.random() * 20);
-                if (tableroOculto[posicionAleatoria] == null) {
-                    tableroOculto[posicionAleatoria] = "m";
-                    minasColocadas++;
-                }
-            }
-            for (int i = 0; i < 20; i++) {
-                if (tableroOculto[i] == null) {
-                    int contadorMinas = 0;
+    public static void main(String[] args) {
+        // configuracion
+        int filas = 5;
+        int columnas = 5;
+        int cantidadMinas = 5;
+        char[][] tablero = new char[filas][columnas];
 
-                    if (i > 0 && "m".equals(tableroOculto[i - 1])) contadorMinas++;
-
-                    if (i < 19 && "m".equals(tableroOculto[i + 1])) contadorMinas++;
-
-                    tableroOculto[i] = String.valueOf(contadorMinas);
-                }
-            }
-            boolean juegoTerminado = false;
-            while (!juegoTerminado) {
-                System.out.println("Tablero de juego:");
-                for (int i = 0; i < 20; i++) {
-                    System.out.print((i+1) + ":" + tableroJuego[i] + "  ");
-                }
-                System.out.println();
-                System.out.print("Elige una posicion (1-20): ");
-                int posicionElegida = sc.nextInt() - 1;
-
-                if (posicionElegida < 0 || posicionElegida >= 20) {
-                    System.out.println("Posicion invalida.");
-                    continue;
-                }
-                if (!tableroJuego[posicionElegida].equals("*")) {
-                    System.out.println("Esa posicion ya esta destapada. Elige otra.");
-                    continue;
-                }
-                if (tableroOculto[posicionElegida].equals("m")) {
-                    System.out.println("¡Boom! Has pisado una mina.");
-                    System.out.println("Has perdido.");
-                    juegoTerminado = true;
-                    continue;
-                }
-                tableroJuego[posicionElegida] = tableroOculto[posicionElegida];
-                boolean elJugadorGana = true;
-                for (int i = 0; i < 20; i++) {
-                    if (!tableroOculto[i].equals("m") && tableroJuego[i].equals("*")) {
-                        elJugadorGana = false;
-                        break;
-                    }
-                }
-                if (elJugadorGana) {
-                    System.out.println("¡HAS GANADO!");
-                    juegoTerminado = true;
-                }
-            }
-            System.out.println("Tablero final:");
-            for (int i = 0; i < 20; i++) {
-                System.out.print(tableroOculto[i] + " ");
+        // Llenar tablero vacío
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                tablero[i][j] = '-';
             }
         }
+        // PONER MINAS
+        int minasColocadas = 0;
+        while (minasColocadas < cantidadMinas) {
+            int f = (int)(Math.random() * filas);
+            int c = (int)(Math.random() * columnas);
+            if (tablero[f][c] == '-') {
+                tablero[f][c] = '*';
+                minasColocadas++;
+            }
+        }
+        // JUEGO
+        Scanner scanner = new Scanner(System.in);
+        boolean juegoActivo = true;
+
+        System.out.println("Empieza el Buscaminas");
+        System.out.println("El tablero es de 0 a 4.");
+
+        while (juegoActivo) {
+            // Pedir coordenadas
+            System.out.print("Ingresa Fila (0-4): ");
+            int filaUsuario = scanner.nextInt();
+            System.out.print("Ingresa Columna (0-4): ");
+            int colUsuario = scanner.nextInt();
+
+            // 1. VERIFICACIÓN (Aquí estaba el error)
+            if (filaUsuario < 0 || filaUsuario >= filas || colUsuario < 0 || colUsuario >= columnas) {
+                System.out.println("¡Coordenadas fuera de rango! Intenta de nuevo.");
+                continue;
+            }
+
+            // 2. LÓGICA DEL JUEGO
+            if (tablero[filaUsuario][colUsuario] == '*') {
+                // Caso: Mina
+                System.out.println("\n💥");
+                System.out.println("Has pisado una mina.");
+                juegoActivo = false;
+            } else {
+                // Caso: A salvo
+                System.out.println("\n No hay Mina");
+                // Ponemos 'V' de Visitado
+                tablero[filaUsuario][colUsuario] = 'V';
+
+                // Mostramos el tablero visible
+                imprimirTableroVisible(tablero);
+            }
+        } // Fin del while
+
+        // Al final, mostramos dónde estaban todas las minas
+        System.out.println("\nAsí quedó el mapa final:");
+        imprimirTableroCompleto(tablero);
+    } // Fin del main
+    public static void imprimirTableroVisible(char[][] t) {
+
+        System.out.println("   0 1 2 3 4"); // Ayuda visual de columnas
+
+        for (int i = 0; i < t.length; i++) {
+            System.out.print(i + "| "); // Ayuda visual de filas
+            for (int j = 0; j < t[0].length; j++) {
+                if (t[i][j] == '*') {
+                    System.out.print("- ");
+                } else {
+                    System.out.print(t[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void imprimirTableroCompleto(char[][] t) {
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[0].length; j++) {
+                System.out.print(t[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
