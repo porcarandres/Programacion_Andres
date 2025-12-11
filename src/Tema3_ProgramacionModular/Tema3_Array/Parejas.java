@@ -69,8 +69,8 @@ public class Parejas {
                 }
             }
         }
-        System.out.println("\n¡Felicidades! Has encontrado todas las parejas.");
-        System.out.println("\nTablero final:");
+        System.out.println("¡Felicidades! Has encontrado todas las parejas.");
+        System.out.println("Tablero final:");
         for (int i = 0; i < tableroVisible.length; i++) {
             System.out.print((i+1) + ": " + tableroVisible[i] + "  ");
         }
