@@ -3,9 +3,6 @@ package Tema4_EjerciciosProgramacion;
 import java.util.Scanner;
 
 public class EjercicioPersona_T4 {
-
-    Scanner sc = new Scanner(System.in);
-
     public class Persona {
         public static final int Default_Age= 0;
         String nombre;
@@ -45,11 +42,11 @@ public class EjercicioPersona_T4 {
         this.nombre=nombre;
     }
     public void showInfo(){
-        System.out.println("Edad: "+edad);
-        System.out.println("Nombre: "+nombre);
+        System.out.println("Las personas tienen nombre y edad.");
     }
     }
     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
         System.out.println();
     }
 }
