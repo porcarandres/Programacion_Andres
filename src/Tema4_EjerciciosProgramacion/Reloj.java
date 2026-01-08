@@ -14,8 +14,8 @@ public class Reloj {
         minutos=Default_Min;
         segundos=Default_Seg;
     }
-    public Reloj(int hora, int minuto, int segundos){
-        this.horas=hora;
+    public Reloj(int horas, int minuto, int segundos){
+        this.horas= horas;
         this.minutos=minuto;
         this.segundos=segundos;
 
@@ -23,9 +23,30 @@ public class Reloj {
     public int getHoras(){
         return horas;
     }
-    public void SetHoras(){
-        if(horas<0 && horas>24){
-
+    public void SetHoras(int horas){
+        if(horas>=0 && horas<=24){
+            this.horas=horas;
         }
     }
+    public int getMinutos(){
+        return minutos;
+    }
+    public void setMinutos(int minutos){
+        if(minutos>=0 && minutos<=60){
+            this.minutos=minutos;
+        }
+    }
+    public int getSegundos(){
+        return segundos;
+    }
+    public void setSegundos(int segundos){
+        if(segundos>=0 && minutos<=60){
+            this.segundos=segundos;
+        }
+    }
+
+    public void setFormato24h(boolean formato24h) {
+        this.formato24h = formato24h;
+    }
+
 }

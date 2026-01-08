@@ -43,11 +43,12 @@ public class Persona {
     public void showInfo(){
         System.out.println("Las personas tienen nombre y edad.");
     }
-    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println();
     }
+}
 
 
 
