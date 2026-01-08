@@ -2,8 +2,7 @@ package Tema4_EjerciciosProgramacion;
 
 import java.util.Scanner;
 
-public class EjercicioPersona_T4 {
-    public class Persona {
+public class Persona {
         public static final int Default_Age= 0;
         String nombre;
         int edad;
@@ -49,6 +48,6 @@ public class EjercicioPersona_T4 {
         Scanner sc = new Scanner(System.in);
         System.out.println();
     }
-}
+
 
 
