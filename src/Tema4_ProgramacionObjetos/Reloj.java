@@ -60,27 +60,27 @@ public class Reloj {
         this.formato24h = formato24h;
     }
 
-    public void mostrarHora() {
+    public String toString() {
 
         if (formato24h) {
-            System.out.println("Hora formato 24h: "+ hora + ":" + minuto + ":" + segundo);
+            return String.format("Hora formato 24h: "+ hora + ":" + minuto + ":" + segundo);
         } else {
 
             if (hora == 0) {
                 hora12 = 12;
-                System.out.println("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
+                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
 
             } else if (hora < 12) {
                 hora12 = hora;
-                System.out.println("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
+                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
 
             } else if (hora == 12) {
                 hora12 = 12;
-                System.out.println("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
+                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
 
             } else {
                 hora12 = hora - 12;
-                System.out.println("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
+                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
             }
         }
     }

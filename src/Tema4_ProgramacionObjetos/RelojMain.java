@@ -7,6 +7,6 @@ public class RelojMain {
         reloj.setMinuto(50);
         reloj.setSegundo(40);
         reloj.setFormato24h(false);
-        reloj.mostrarHora();
+        System.out.println(reloj);
     }
 }
