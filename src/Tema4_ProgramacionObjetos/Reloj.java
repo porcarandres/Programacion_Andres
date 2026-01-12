@@ -9,7 +9,7 @@ public class Reloj {
     public static final int DefaultMinuto = 0;
     public static final int DefaultHora = 0;
 
-    public Reloj(int hora, int minuto, int segundo) {
+    public Reloj() {
         this.hora= DefaultHora;
         this.minuto= DefaultMinuto;
         this.segundo= DefaultSegundo;
