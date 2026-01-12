@@ -7,11 +7,14 @@ public class Persona {
     String apellido2="";
     int edad;
 
-    public static final String DefaultDNI = "000000A";
+    public static final String DefaultDNI = "88888888A";
     public static final String Defaultnombre= "N";
     public static final String Defaultapellido1 = "A";
     public static final String Defaultapellido2="A";
     public static final int Defaultedad = 0;
+
+    public static final int adultAge = 18;
+    public static final int retiredAge = 65;
 
     public Persona(){
         this.DNI = DefaultDNI;
@@ -55,20 +58,29 @@ public class Persona {
         this.edad=edad;
     }
 
-    public boolean isAdult(){
-        if(edad<=18){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    public boolean isRetired(){
-        if(edad<65){
-            return true;
-        }else{
-            return false;
-        }
+    public void print() {
+        System.out.println("DNI: " + DNI);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido1: " + apellido1);
+        System.out.println("Apellido2: " + apellido2);
+        System.out.println("Edad: " + edad);
     }
 
+    public boolean isAdult(){
+        return edad >= adultAge;
+
+    }
+
+    public boolean isRetired(){
+        return edad > retiredAge;
+    }
+
+    public int ageDifference(Persona persona2) {
+        return Math.abs(this.edad - persona2.edad);
+    }
+
+    public static boolean checkDNI() {
+
+    }
 
 }
