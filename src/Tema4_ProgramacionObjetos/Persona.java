@@ -68,7 +68,6 @@ public class Persona {
 
     public boolean isAdult(){
         return edad >= adultAge;
-
     }
 
     public boolean isRetired(){
@@ -76,11 +75,21 @@ public class Persona {
     }
 
     public int ageDifference(Persona persona2) {
-        return Math.abs(this.edad - persona2.edad);
+        if (edad > persona2.edad) {
+            return (this.edad - persona2.edad);
+        } else{
+            return (persona2.edad - this.edad) ;
+        }
     }
 
-    public static boolean checkDNI() {
+    public static boolean checkDNI(String DNI) {
+        if (DNI == null || DNI.length() != 9) return false;
 
+        for (int i = 0; i < 8; i++)
+            if (DNI.charAt(i) < '0' || DNI.charAt(i) > '9') return false;
+
+        char ultima = DNI.charAt(8);
+        return (ultima >= 'A' && ultima <= 'Z') || (ultima >= 'a' && ultima <= 'z');
     }
 
 }
