@@ -1,34 +1,25 @@
 package Tema4_ProgramacionObjetos;
 
 public class Persona {
-    String DNI = "";
-    String nombre ="";
-    String apellido1 = "";
-    String apellido2="";
-    int edad;
-
-    public static final String DefaultDNI = "88888888A";
-    public static final String Defaultnombre= "N";
-    public static final String Defaultapellido1 = "A";
-    public static final String Defaultapellido2="A";
-    public static final int Defaultedad = 0;
+    private final String DNI;
+    private  String nombre;
+    private  String apellido1;
+    private  String apellido2;
+    private  int edad;
 
     public static final int adultAge = 18;
     public static final int retiredAge = 65;
 
-    public Persona(){
-        this.DNI = DefaultDNI;
-        this.nombre = Defaultnombre;
-        this.apellido1 = Defaultapellido1;
-        this.apellido2 = Defaultapellido2;
-        this.edad = Defaultedad;
+    public Persona(String DNI,String nombre, String apellido1,String apellido2,int edad){
+        this.DNI = DNI;
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.edad = edad;
     }
 
     public String getDNI() {
         return DNI;
-    }
-    public void setDNI(String DNI) {
-        this.DNI= DNI;
     }
 
     public String getNombre(){
