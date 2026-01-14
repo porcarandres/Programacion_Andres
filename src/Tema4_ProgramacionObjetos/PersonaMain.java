@@ -25,6 +25,7 @@ public class PersonaMain {
         p1.print();
         System.out.println(p1.getNombre() + " es adulto? " + p1.isAdult());
         System.out.println(p1.getNombre() + " esta jubilado? " + p1.isRetired());
+        System.out.println("El DNI es verdadero? "+ Persona.checkDNI(p1.DNI));
 
         System.out.println("\n");
 
@@ -32,11 +33,14 @@ public class PersonaMain {
         p2.print();
         System.out.println(p2.getNombre() + " es adulto? " + p2.isAdult());
         System.out.println(p2.getNombre() + " esta jubilado? " + p2.isRetired());
+        System.out.println("El DNI es verdadero? "+Persona.checkDNI(p2.DNI));
 
-        System.out.println("\n");
+        System.out.println("\nDiferencia de edad:");
 
         int diferencia = p1.ageDifference(p2);
         System.out.println("La diferencia de edad entre las personas es: "+diferencia);
+
+
 
 
     }
