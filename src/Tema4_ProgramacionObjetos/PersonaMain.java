@@ -7,7 +7,7 @@ public class PersonaMain {
         p1.setNombre("PEREIRA");
         p1.setApellido1("CASTOR");
         p1.setApellido2("PALETAS");
-        p1.setEdad(65);
+        p1.setEdad(32);
         p1.isAdult();
         p1.isRetired();
 
@@ -17,7 +17,7 @@ public class PersonaMain {
         p2.setNombre("AGUSTIN");
         p2.setApellido1("CINCUENTAYUNO");
         p2.setApellido2("SOYPRO");
-        p2.setEdad(17);
+        p2.setEdad(28);
         p2.isAdult();
         p2.isRetired();
 
