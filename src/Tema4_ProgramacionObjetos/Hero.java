@@ -32,15 +32,61 @@ public class Hero {
     }
 
 
+    public String getNombre() {
+        return nombre; }
+
+    public int getNivel() {
+        return nivel; }
+
+    public int getSalud() {
+        return salud; }
+
+    public int getSaludMax() {
+        return saludMax; }
+
+    public int getExperiencia() {
+        return experiencia; }
+
+    public int getAtaque() {
+        return ataque; }
+
+    public int getDefensa() {
+        return defensa; }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre; }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel; }
+
+    public void setSalud(int salud) {
+        this.salud = salud; }
+
+    public void setSaludMax(int saludMax) {
+        this.saludMax = saludMax; }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia; }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque; }
+
+    public void setDefensa(int defensa) {
+        this.defensa = defensa; }
+
     public void drinkPotion() {
+
         this.salud = this.salud + CURACION_POCION;
+
         if (this.salud > this.saludMax) {
             this.salud = this.saludMax;
         }
         System.out.println(nombre + " usa pocion. Vida: " + salud);
+
     }
 
     public void rest() {
+
         this.salud = this.salud + CURACION_DESCANSO;
         if (this.salud > this.saludMax) {
             this.salud = this.saludMax;
@@ -49,29 +95,33 @@ public class Hero {
     }
 
     public String toString() {
+
         return "Heroe: " + nombre + " | Nivel: " + nivel + " | HP: " + salud + "/" + saludMax + " | Atq: " + ataque + " | Def: " + defensa + " | XP: " + experiencia;
+
     }
 
     public void attack(Hero Hero2) {
-        Random rand = new Random();
+        Random random = new Random();
 
         // Calculamos el daño máximo posible
         int diferencia = this.ataque - Hero2.defensa;
         int danoTope;
-
         if (diferencia > DANIO_MINIMO_REGLA) {
             danoTope = diferencia;
         } else {
             danoTope = DANIO_MINIMO_REGLA;
-        }
-        // Daño aleatorio entre 1 y 10 que es el tope
-        int danoFinal = rand.nextInt(danoTope) + 1;
 
+        }
+
+        // Daño aleatorio entre 1 y 10 que es el tope
+        int danoFinal = random.nextInt(danoTope) + 1;
         Hero2.salud = Hero2.salud - danoFinal;
         if (Hero2.salud < 0) {
             Hero2.salud = 0;
         }
         System.out.println(this.nombre + " golpea a " + Hero2.nombre + " con " + danoFinal + " de daño.");
+
+
 
         // Ver si sube de nivel con la xp que tiene
         this.experiencia = this.experiencia + XP_POR_ATAQUE;
@@ -87,5 +137,6 @@ public class Hero {
         this.ataque = this.ataque + MEJORA_ATAQUE;
         this.defensa = this.defensa + MEJORA_DEFENSA;
         System.out.println(nombre +" ha subido al nivel "+ nivel);
+
     }
 }
