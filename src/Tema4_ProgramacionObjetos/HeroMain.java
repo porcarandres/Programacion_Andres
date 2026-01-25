@@ -2,7 +2,6 @@ package Tema4_ProgramacionObjetos;
 
 public class HeroMain {
     public static void main(String[] args) {
-
         //heroes
         Hero heroe1 = new Hero("Aragorn", 1, 50, 100, 0, 30, 15);
         Hero heroe2 = new Hero("Orco", 1, 60, 60, 0, 20, 5);
