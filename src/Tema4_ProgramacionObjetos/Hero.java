@@ -3,7 +3,6 @@ package Tema4_ProgramacionObjetos;
 import java.util.Random;
 
 public class Hero {
-
     private static final int CURACION_POCION = 10;
     private static final int CURACION_DESCANSO = 50;
     private static final int XP_POR_ATAQUE = 10;
