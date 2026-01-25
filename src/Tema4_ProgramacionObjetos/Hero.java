@@ -1,23 +1,92 @@
 package Tema4_ProgramacionObjetos;
 
-public class Hero {
-    private String nombre;
-    private int level;
-    private int health;
-    private int maxHealth;
-    private int experience;
-    private int attack;
-    private int defense;
+import java.util.Random;
 
-    public Hero(String nombre, int level, int health, int maxHealth, int experience, int attack, int defense){
-        this.nombre=nombre;
-        this.level=level;
-        this.health=health;
-        this.maxHealth=maxHealth;
-        this.experience=experience;
-        this.attack=attack;
-        this.defense=defense;
+public class Hero {
+
+    private static final int CURACION_POCION = 10;
+    private static final int CURACION_DESCANSO = 50;
+    private static final int XP_POR_ATAQUE = 10;
+    private static final int XP_NECESARIA_NIVEL = 50;
+    private static final int DANIO_MINIMO_REGLA = 10;
+
+    private static final int MEJORA_VIDA = 5;
+    private static final int MEJORA_ATAQUE = 1;
+    private static final int MEJORA_DEFENSA = 1;
+
+    private String nombre;
+    private int nivel;
+    private int salud;
+    private int saludMax;
+    private int experiencia;
+    private int ataque;
+    private int defensa;
+
+    public Hero(String nombre, int nivel, int salud, int saludMax, int experiencia, int ataque, int defensa) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.saludMax = saludMax;
+        this.salud = salud;
+        this.experiencia = experiencia;
+        this.ataque = ataque;
+        this.defensa = defensa;
     }
 
 
+    public void drinkPotion() {
+        this.salud = this.salud + CURACION_POCION;
+        if (this.salud > this.saludMax) {
+            this.salud = this.saludMax;
+        }
+        System.out.println(nombre + " usa pocion. Vida: " + salud);
+    }
+
+    public void rest() {
+        this.salud = this.salud + CURACION_DESCANSO;
+        if (this.salud > this.saludMax) {
+            this.salud = this.saludMax;
+        }
+        System.out.println(nombre + " descansa. Vida: " + salud);
+    }
+
+    public String toString() {
+        return "Heroe: " + nombre + " | Nivel: " + nivel + " | HP: " + salud + "/" + saludMax + " | Atq: " + ataque + " | Def: " + defensa + " | XP: " + experiencia;
+    }
+
+    public void attack(Hero Hero2) {
+        Random rand = new Random();
+
+        // Calculamos el daño máximo posible
+        int diferencia = this.ataque - Hero2.defensa;
+        int danoTope;
+
+        if (diferencia > DANIO_MINIMO_REGLA) {
+            danoTope = diferencia;
+        } else {
+            danoTope = DANIO_MINIMO_REGLA;
+        }
+        // Daño aleatorio entre 1 y 10 que es el tope
+        int danoFinal = rand.nextInt(danoTope) + 1;
+
+        Hero2.salud = Hero2.salud - danoFinal;
+        if (Hero2.salud < 0) {
+            Hero2.salud = 0;
+        }
+        System.out.println(this.nombre + " golpea a " + Hero2.nombre + " con " + danoFinal + " de daño.");
+
+        // Ver si sube de nivel con la xp que tiene
+        this.experiencia = this.experiencia + XP_POR_ATAQUE;
+        if (this.experiencia >= XP_NECESARIA_NIVEL) {
+            levelUp();
+        }
+    }
+    private void levelUp() {
+        this.nivel = this.nivel + 1;
+        this.experiencia = 0;
+        this.saludMax = this.saludMax + MEJORA_VIDA;
+        this.salud = this.salud + MEJORA_VIDA;
+        this.ataque = this.ataque + MEJORA_ATAQUE;
+        this.defensa = this.defensa + MEJORA_DEFENSA;
+        System.out.println(nombre +" ha subido al nivel "+ nivel);
+    }
 }
