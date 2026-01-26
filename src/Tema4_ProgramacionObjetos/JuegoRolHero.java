@@ -63,7 +63,9 @@ public class JuegoRolHero {
                     }
                 }
             }
-            if (prota.getSalud() <= 0) break;
+            if (prota.getSalud() <= 0) {
+                break;
+            }
 
             // probabilidades al acabar la horda
             // Descanso (0.1%)
@@ -75,9 +77,11 @@ public class JuegoRolHero {
             if (rand.nextInt(100) < 10) {
                 prota.drinkPotion();
             }
-            System.out.println();
-        }
+            System.out.println("\n"+prota.toString()+"\n");
 
-        System.out.println("JUEGO TERMINADO \n Sobreviviste a " + hordas + " hordas.");
+        }
+        System.out.println();
+        System.out.println("\nJUEGO TERMINADO \nSobreviviste a " + hordas + " hordas.");
+        System.out.println("Felicidades: "+prota.getNombre());
     }
 }
