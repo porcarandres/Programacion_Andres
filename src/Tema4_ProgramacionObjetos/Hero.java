@@ -103,7 +103,7 @@ public class Hero {
     public void attack(Hero Hero2) {
         Random random = new Random();
 
-        // Calculamos el daño máximo posible
+        // calculamos el daño maximo posible
         int diferencia = this.ataque - Hero2.defensa;
         int danoTope;
         if (diferencia > DANIO_MINIMO_REGLA) {
@@ -113,7 +113,7 @@ public class Hero {
 
         }
 
-        // Daño aleatorio entre 1 y 10 que es el tope
+        // daño aleatorio entre 1 y 10 que es el tope
         int danoFinal = random.nextInt(danoTope) + 1;
         Hero2.salud = Hero2.salud - danoFinal;
         if (Hero2.salud < 0) {
@@ -123,7 +123,7 @@ public class Hero {
 
 
 
-        // Ver si sube de nivel con la xp que tiene
+        // ver si sube de nivel con la xp que tiene
         this.experiencia = this.experiencia + XP_POR_ATAQUE;
         if (this.experiencia >= XP_NECESARIA_NIVEL) {
             levelUp();
