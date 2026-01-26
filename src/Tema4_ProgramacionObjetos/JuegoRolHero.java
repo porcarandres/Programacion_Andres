@@ -71,13 +71,13 @@ public class JuegoRolHero {
                 prota.rest();
             }
 
-            // pocion (10% )
+            // pocion (10%)
             if (rand.nextInt(100) < 10) {
                 prota.drinkPotion();
             }
             System.out.println();
         }
 
-        System.out.println("JUEGO TERMINADO. \n Sobreviviste a " + hordas + " hordas.");
+        System.out.println("JUEGO TERMINADO \n Sobreviviste a " + hordas + " hordas.");
     }
 }
