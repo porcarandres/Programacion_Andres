@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class JuegoRolHero {
     public static void main(String[] args){
-        Random rand = new Random();
+        Random random = new Random();
 
         //nuestro personaje
         Hero prota = new Hero("Aragorn", 5, 100, 100, 0, 40, 15);
@@ -17,7 +17,7 @@ public class JuegoRolHero {
             System.out.println("HORDA " + hordas);
 
             // aparecen entre 1 y 3 enemigos
-            int numEnemigos = rand.nextInt(3) + 1;
+            int numEnemigos = random.nextInt(3) + 1;
             Hero[] enemigos = new Hero[numEnemigos];
 
             for (int i = 0; i < numEnemigos; i++) {
@@ -33,7 +33,7 @@ public class JuegoRolHero {
                 // turno de los enemigos: 10% probabilidad de huir antes de que ataquemos
                 for (int i = 0; i < enemigos.length; i++) {
                     if (enemigos[i] != null && enemigos[i].getSalud() > 0) {
-                        if (rand.nextInt(100) < 10) {
+                        if (random.nextInt(100) < 10) {
                             System.out.println("Un enemigo ha huido.");
                             enemigos[i].setSalud(0);
                         }
@@ -69,12 +69,12 @@ public class JuegoRolHero {
 
             // probabilidades al acabar la horda
             // Descanso (0.1%)
-            if (rand.nextInt(1000) < 1) {
+            if (random.nextInt(1000) < 1) {
                 prota.rest();
             }
 
             // pocion (10%)
-            if (rand.nextInt(100) < 10) {
+            if (random.nextInt(100) < 10) {
                 prota.drinkPotion();
             }
             System.out.println("\n"+prota.toString()+"\n");
