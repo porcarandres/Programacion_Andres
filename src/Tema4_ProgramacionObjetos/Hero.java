@@ -3,6 +3,7 @@ package Tema4_ProgramacionObjetos;
 import java.util.Random;
 
 public class Hero {
+    // atributos
     private static final int CURACION_POCION = 10;
     private static final int CURACION_DESCANSO = 50;
     private static final int XP_POR_ATAQUE = 10;
@@ -21,6 +22,7 @@ public class Hero {
     private int ataque;
     private int defensa;
 
+    //heroe
     public Hero(String nombre, int nivel, int salud, int saludMax, int experiencia, int ataque, int defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
