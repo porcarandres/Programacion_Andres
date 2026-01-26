@@ -14,7 +14,7 @@ public class JuegoRolHero {
 
         while (prota.getSalud() > 0) {
             hordas = hordas + 1;
-            System.out.println("HORDA " + hordas + " ");
+            System.out.println("HORDA " + hordas);
 
             // aparecen entre 1 y 3 enemigos
             int numEnemigos = rand.nextInt(3) + 1;
