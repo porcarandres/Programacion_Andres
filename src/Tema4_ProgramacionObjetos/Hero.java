@@ -77,7 +77,6 @@ public class Hero {
         this.defensa = defensa; }
 
     public void drinkPotion() {
-
         this.salud = this.salud + CURACION_POCION;
 
         if (this.salud > this.saludMax) {
@@ -88,7 +87,6 @@ public class Hero {
     }
 
     public void rest() {
-
         this.salud = this.salud + CURACION_DESCANSO;
         if (this.salud > this.saludMax) {
             this.salud = this.saludMax;
@@ -97,11 +95,9 @@ public class Hero {
     }
 
     public String toString() {
-
         return "Heroe: " + nombre + " | Nivel: " + nivel + " | HP: " + salud + "/" + saludMax + " | Atq: " + ataque + " | Def: " + defensa + " | XP: " + experiencia;
 
     }
-
     public void attack(Hero Hero2) {
         Random random = new Random();
 
@@ -123,8 +119,6 @@ public class Hero {
         }
         System.out.println(this.nombre + " golpea a " + Hero2.nombre + " con " + danoFinal + " de daño.");
 
-
-
         // ver si sube de nivel con la xp que tiene
         this.experiencia = this.experiencia + XP_POR_ATAQUE;
         if (this.experiencia >= XP_NECESARIA_NIVEL) {
@@ -132,6 +126,7 @@ public class Hero {
         }
     }
     private void levelUp() {
+
         this.nivel = this.nivel + 1;
         this.experiencia = 0;
         this.saludMax = this.saludMax + MEJORA_VIDA;
