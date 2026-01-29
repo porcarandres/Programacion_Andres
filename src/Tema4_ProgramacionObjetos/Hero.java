@@ -23,7 +23,7 @@ public class Hero {
     private int ataque;
     private int defensa;
 
-    //heroe
+    //heroe ()
     public Hero(String nombre, int nivel, int salud, int saludMax, int experiencia, int ataque, int defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
