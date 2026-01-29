@@ -34,6 +34,15 @@ public class Hero {
         this.defensa = defensa;
     }
 
+    public Hero(){
+        this.nombre = "A";
+        this.nivel = 1;
+        this.saludMax = 100;
+        this.salud = 100;
+        this.experiencia = 100;
+        this.ataque = 10;
+        this.defensa = 10;
+    }
 
     public String getNombre() {
         return nombre; }
