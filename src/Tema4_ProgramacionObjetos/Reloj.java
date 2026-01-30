@@ -9,11 +9,19 @@ public class Reloj {
     public static final int DefaultMinuto = 0;
     public static final int DefaultHora = 0;
 
+    //constructor vacío
     public Reloj() {
         this.hora = DefaultHora;
         this.minuto = DefaultMinuto;
         this.segundo = DefaultSegundo;
         this.formato24h = true;
+    }
+
+    public Reloj(int hora,int minuto,int segundo){
+        this.hora = hora;
+        this.minuto = minuto;
+        this.segundo = segundo;
+        this.formato24h=true;
     }
 
     public int getHora() {
@@ -61,28 +69,32 @@ public class Reloj {
     }
 
     public String toString() {
+        String resultado;
 
         if (formato24h) {
-            return String.format("Hora formato 24h: "+ hora + ":" + minuto + ":" + segundo);
+            resultado = "Hora 24h: " + hora + ":" + minuto + ":" + segundo;
         } else {
+            int hora12;
+            String periodo;
+
+            if (hora < 12) {
+                periodo = "AM";
+            } else {
+                periodo = "PM";
+            }
 
             if (hora == 0) {
                 hora12 = 12;
-                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
-
-            } else if (hora < 12) {
-                hora12 = hora;
-                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " AM");
-
-            } else if (hora == 12) {
-                hora12 = 12;
-                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
-
-            } else {
+            } else if (hora > 12) {
                 hora12 = hora - 12;
-                return String.format("Hora: " + hora12 + ":" + minuto + ":" + segundo + " PM");
+            } else {
+                hora12 = hora;
             }
+
+            resultado = "Hora 12h: " + hora12 + ":" + minuto + ":" + segundo + " " + periodo;
         }
+
+        return resultado;
     }
 }
 

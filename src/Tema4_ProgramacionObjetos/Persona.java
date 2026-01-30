@@ -10,12 +10,21 @@ public class Persona {
     public static final int adultAge = 18;
     public static final int retiredAge = 65;
 
+    //constructor vacío
+
     public Persona(String DNI,String nombre, String apellido1,String apellido2,int edad){
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.edad = edad;
+    }
+    public Persona(){
+        this.DNI = "11111111A";
+        this.nombre = "a";
+        this.apellido1 = "a";
+        this.apellido2 = "a";
+        this.edad = 0;
     }
 
     public String getDNI() {
@@ -46,7 +55,11 @@ public class Persona {
     }
 
     public void setEdad(int edad) {
+        if(edad>=0){
         this.edad=edad;
+        } else{
+            System.out.println("Edad no valida");
+        }
     }
 
     public void print() {

@@ -64,6 +64,7 @@ public class JuegoRolHero {
                 }
             }
             if (prota.getSalud() <= 0) {
+                //usar variable booleana
                 break;
             }
 
