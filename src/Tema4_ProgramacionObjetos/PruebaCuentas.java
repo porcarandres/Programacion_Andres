@@ -32,6 +32,8 @@ public class PruebaCuentas {
                     break;
 
                 case 3:
+                    System.out.println("Datos de la persona:");
+                    System.out.println("DNI: " + persona1.getDni());
 
                     break;
 
