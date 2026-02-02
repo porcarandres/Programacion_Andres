@@ -1,13 +1,13 @@
 package Tema4_ProgramacionObjetos;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PruebaCuentas {
     public static void main (String [] args){
         Scanner sc =new Scanner(System.in);
         int opcion;
-        showMenu();
+        PersonaCuenta persona1 = new PersonaCuenta();
+        sMenu();
 
         do{
             System.out.println("Opcion:");
@@ -15,11 +15,20 @@ public class PruebaCuentas {
 
             switch (opcion){
                 case 1:
-                    PersonaCuenta persona1 = new PersonaCuenta("34546385M");
+                    System.out.print("Introduce el DNI de la persona: ");
+                    String dni = sc.next();
+                    persona1 = new PersonaCuenta(dni);
                     break;
 
                 case 2:
+                    System.out.print("Introduce el número de cuenta: ");
+                    int numC = sc.nextInt();
 
+                    System.out.print("Introduce el saldo inicial: ");
+                    int saldoC = sc.nextInt();
+
+                    if (persona1.añadirCuenta(new Cuenta(numC, saldoC))) {
+                        System.out.println("Cuenta añadida.");}
                     break;
 
                 case 3:
@@ -53,7 +62,7 @@ public class PruebaCuentas {
 
 
     }
-    public static void showMenu() {
+    public static void sMenu() {
         System.out.println("Menu");
         System.out.println("1. Crear Persona");
         System.out.println("2. Añadir Cuenta a Persona");
