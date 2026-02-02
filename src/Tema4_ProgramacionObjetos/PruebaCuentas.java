@@ -18,10 +18,11 @@ public class PruebaCuentas {
                 case 1:
                     System.out.print("Introduce DNI: ");
                     personas.add(new PersonaCuenta(sc.nextLine()));
-
                     break;
 
                 case 2:
+                    System.out.println("DNI:");
+
 
                     break;
 
