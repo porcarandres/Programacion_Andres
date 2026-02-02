@@ -50,7 +50,11 @@ public class PruebaCuentas {
                     break;
 
                 case 7:
-
+                    if (persona1.esMoroso()) {
+                        System.out.println("La persona es morosa (tiene cuentas en negativo).");
+                    } else {
+                        System.out.println("La persona no tiene deudas.");
+                    }
                     break;
                 case 0:
                     System.out.println("Fin del programa.");
