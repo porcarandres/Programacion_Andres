@@ -12,7 +12,7 @@ public class PersonaCuenta {
             this.contadorCuentas = 0;
         }
         public PersonaCuenta(){
-            this.dni= "1111111";
+            this.dni= "1111111A";
             this.cuentas= new Cuenta[3];
             this.contadorCuentas= 0;
         }

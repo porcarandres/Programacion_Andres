@@ -15,7 +15,7 @@ public class PruebaCuentas {
 
             switch (opcion){
                 case 1:
-
+                    PersonaCuenta persona1 = new PersonaCuenta("34546385M");
                     break;
 
                 case 2:
