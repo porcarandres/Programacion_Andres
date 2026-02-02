@@ -20,6 +20,7 @@ public class Cuenta {
     public int setNumCuenta(){
         return numCuenta;
     }
+
     public void getSaldoDispo(int saldoDispo){
         this.saldoDispo=saldoDispo;
     }
@@ -34,4 +35,5 @@ public class Cuenta {
     public void abonar(int abona){
          saldoDispo += abona;
     }
+
 }

@@ -40,4 +40,14 @@ public class PersonaCuenta {
             }
             return false;
         }
+        public String toString() {
+        String resultado = "DNI: " + this.dni + "\n";
+
+        for (int i = 0; i < this.cuentas.length; i++) {
+            if (this.cuentas[i] != null) {
+                resultado += "Cuenta: " + this.cuentas[i].numCuenta + " Saldo: " + this.cuentas[i].setSaldoDispo()+"€\n";
+            }
+        }
+        return resultado;
+    }
 }
