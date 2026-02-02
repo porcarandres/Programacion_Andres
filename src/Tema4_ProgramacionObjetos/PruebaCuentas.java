@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class PruebaCuentas {
     public static void main (String [] args){
         Scanner sc =new Scanner(System.in);
-        ArrayList<Persona> personas= new ArrayList<>();
+        ArrayList<PersonaCuenta> personas= new ArrayList<>();
         int opcion;
         showMenu();
 
@@ -16,6 +16,8 @@ public class PruebaCuentas {
 
             switch (opcion){
                 case 1:
+                    System.out.print("Introduce DNI: ");
+                    personas.add(new PersonaCuenta(sc.nextLine()));
 
                     break;
 
