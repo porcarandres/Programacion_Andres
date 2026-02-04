@@ -2,10 +2,25 @@ package Tema5_ProgramacionColecciones;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ColaBanco {
     public static void main(String[] args){
-        List<ColaBanco> Cola = new ArrayList<>();
+        Scanner sc= new Scanner(System.in);
+
+    }
+    List<ColaBanco> Cola = new ArrayList<>();
+    Scanner sc= new Scanner(System.in);
+
+    public void añadirUsuario(){
+        System.out.println("Añade el nombre del usuario:");
+        String nombre=sc.nextLine();
+        System.out.println("Añade el dni del usuario:");
+        String dni=sc.nextLine();
+        System.out.println("Añade la edad del usuario:");
+        int edad=sc.nextInt();
+
+
 
     }
 
