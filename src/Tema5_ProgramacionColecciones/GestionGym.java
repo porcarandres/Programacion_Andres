@@ -83,8 +83,8 @@ public class GestionGym {
          String dni = sc.nextLine();
 
          if (Gym.containsKey(dni)){
+             System.out.println("Nueva edad;");
              int edadnueva = sc.nextInt();
-             sc.nextLine();
 
              Gym.replace(dni,new UsuarioGym(dni,edadnueva));
          }else {
