@@ -14,4 +14,20 @@ public class UsuariosGym {
         this.dni="11111111A";
         this.edad=18;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 }
