@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GestionGym {
-    Map<String, Integer> Gym = new HashMap<>();
+    Map<String, Integer> Gym = new HashMap<>();a
 
 
 
