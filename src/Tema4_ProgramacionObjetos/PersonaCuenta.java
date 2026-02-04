@@ -31,6 +31,10 @@ public class PersonaCuenta {
                 return false;
             }
         }
+
+        public Cuenta[] getCuentas() {
+            return cuentas;
+        }
         public boolean esMoroso(){
             for (int i = 0; i < contadorCuentas; i++) {
                 if (cuentas[i].setSaldoDispo() < 0){

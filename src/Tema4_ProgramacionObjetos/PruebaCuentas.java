@@ -37,15 +37,60 @@ public class PruebaCuentas {
                     break;
 
                 case 4:
+                    System.out.print("Introduce el número de cuenta: ");
+                    int numNomina = sc.nextInt();
+                    System.out.print("Importe de la nómina: ");
+                    int importeNomina = sc.nextInt();
 
+                    for (int i = 0; i < persona1.getCuentas().length; i++) {
+                        Cuenta cuenta = persona1.getCuentas()[i];
+                        if (cuenta != null && cuenta.setNumCuenta() == numNomina) {
+                            cuenta.abonar(importeNomina);
+                            System.out.println("Nómina recibida.");
+                        }
+                    }
                     break;
 
                 case 5:
+                    System.out.print("Introduce el número de cuenta: ");
+                    int numPago = sc.nextInt();
+                    System.out.print("Importe: ");
+                    int importePago = sc.nextInt();
 
+                    for (int i = 0; i < persona1.getCuentas().length; i++) {
+                        Cuenta cuenta = persona1.getCuentas()[i];
+                        if (cuenta != null && cuenta.setNumCuenta() == numPago) {
+                            cuenta.pagar(importePago);
+                            System.out.println("Pago realizado");
+                        }
+                    }
                     break;
 
                 case 6:
+                    System.out.print("Num cuenta origen: ");
+                    int origen = sc.nextInt();
+                    System.out.print("Num cuenta destino: ");
+                    int destino = sc.nextInt();
+                    System.out.print("Cantidad: ");
+                    int cantidad = sc.nextInt();
 
+                    Cuenta cOrigen = null;
+                    Cuenta cDestino = null;
+
+                    for (int i = 0; i < persona1.getCuentas().length; i++) {
+                        Cuenta cuenta = persona1.getCuentas()[i];
+                        if (cuenta != null) {
+                            if (cuenta.setNumCuenta() == origen) cOrigen = cuenta;
+                            if (cuenta.setNumCuenta() == destino) cDestino = cuenta;
+                        }
+                    }
+                    if (cOrigen != null && cDestino != null) {
+                        cOrigen.pagar(cantidad);
+                        cDestino.abonar(cantidad);
+                        System.out.println("Transferencia realizada");
+                    } else {
+                        System.out.println("Error");
+                    }
                     break;
 
                 case 7:
@@ -62,9 +107,6 @@ public class PruebaCuentas {
                     System.out.println("Opción no valida.");
             }
         }while (opcion !=0);
-
-
-
 
     }
     public static void sMenu() {
