@@ -1,8 +1,11 @@
 package Tema5_ProgramacionColecciones;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ColaBanco {
     public static void main(String[] args){
-
+        List<ColaBanco> Cola = new ArrayList<>();
 
     }
 
