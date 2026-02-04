@@ -20,11 +20,11 @@ public class ListaCompra {
 
             if(ListaCompra.contains(producto)){
                 System.out.println("El producto ya esta, pon otro.");
+                cantidad++;
             }
             else{
                 ListaCompra.add(producto);
             }
-
         }
         System.out.println("La Lista contiene estos productos: "+ListaCompra);
     }
