@@ -9,7 +9,7 @@ public class ColaBanco {
         Scanner sc= new Scanner(System.in);
 
     }
-    List<ColaBanco> Cola = new ArrayList<>();
+    List<UsuarioBanco> cola = new ArrayList<UsuarioBanco>();
     Scanner sc= new Scanner(System.in);
 
     public void añadirUsuario(){
@@ -20,8 +20,8 @@ public class ColaBanco {
         System.out.println("Añade la edad del usuario:");
         int edad=sc.nextInt();
 
-
-
+        cola.add(new UsuarioBanco(nombre,dni,edad));
+        System.out.println("Datos añadidos:"+nombre+" Dni: "+dni+" Edad: "+edad);
     }
 
     public class UsuarioBanco{
@@ -29,7 +29,8 @@ public class ColaBanco {
         private String dni;
         private int edad;
 
-        public UsuarioBanco(String dni, int edad) {
+        public UsuarioBanco(String nombre,String dni, int edad) {
+            this.nombre=nombre;
             this.dni = dni;
             this.edad = edad;
 
