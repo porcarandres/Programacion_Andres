@@ -32,6 +32,7 @@ public class GestionGym {
                     gestion.mostrarDatos();
                     break;
                 case 4:
+                    gestion.modificarUsuarios();
                     break;
                 case 5:
                     System.out.println("salir");
