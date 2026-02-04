@@ -8,6 +8,7 @@ public class GestionGym {
     public static void main(String[] args) {
         GestionGym gestion = new GestionGym();
         gestion.darAlta();
+        gestion.darBaja();
     }
 
     Map<String, UsuarioGym> Gym = new HashMap<>();
@@ -22,10 +23,9 @@ public class GestionGym {
         sc.nextLine();
         Gym.put(dni, new UsuarioGym(dni, edad));
         System.out.println("Dado de alta");
-
     }
+
     public void darBaja(){
-        System.out.println("--- Baja de Usuario ---");
         System.out.println("Introduce el DNI del usuario a borrar:");
         String dni = sc.nextLine();
 
@@ -33,9 +33,11 @@ public class GestionGym {
             Gym.remove(dni);
             System.out.println("Usuario con DNI " + dni + " eliminado.");
         } else {
-            System.out.println("No se encontró ningún usuario con ese DNI.");
+            System.out.println("No hay ningun usuario con ese DNI.");
         }
     }
+
+
     public class UsuarioGym {
 
         private String dni;
