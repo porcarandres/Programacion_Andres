@@ -22,7 +22,7 @@ public class ColaBanco {
 
             switch (opcion) {
                 case 1:
-                    ColaBanco.añadirUsuario();
+                    ColaBanco.anadirUsuario();
                     break;
                 case 2:
                     ColaBanco.atenderPrimero();
@@ -30,7 +30,7 @@ public class ColaBanco {
                 case 3:
                     System.out.println("Posicion a eliminar:");
                     int pos = sc.nextInt();
-                    ColaBanco.seCansó(pos);
+                    ColaBanco.seCanso(pos);
                     break;
                 case 4:
                     System.out.println("Salir");
@@ -43,7 +43,7 @@ public class ColaBanco {
     List<UsuarioBanco> cola = new ArrayList<UsuarioBanco>();
     Scanner sc= new Scanner(System.in);
 
-    public void añadirUsuario(){
+    public void anadirUsuario(){
         System.out.println("Añade el nombre del usuario:");
         String nombre=sc.nextLine();
         System.out.println("Añade el dni del usuario:");
@@ -64,7 +64,7 @@ public class ColaBanco {
         }
     }
 
-    public void seCansó(int posicion){
+    public void seCanso(int posicion){
         if (posicion >= 0 && posicion < cola.size()){
             cola.remove(posicion);
         }else {
