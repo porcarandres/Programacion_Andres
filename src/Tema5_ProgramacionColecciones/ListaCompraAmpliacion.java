@@ -17,7 +17,7 @@ public class ListaCompraAmpliacion {
         sc.nextLine();
 
         for (int i = 0; i < total; i++) {
-            System.out.println("Escribe el producto:");
+            System.out.println("Escribe el producto numero "+(i+1)+": ");
             String producto = sc.nextLine();
 
             if(productos.contains(producto)){
@@ -43,7 +43,7 @@ public class ListaCompraAmpliacion {
             switch (opcion) {
                 case 1:
                     System.out.print("¿Qué producto acabas de meter en el carro? ");
-                    String item = sc.nextLine().toLowerCase();
+                    String item = sc.nextLine();
                     if (productos.contains(item)) {
                         carro.add(item);
                         System.out.println("¡Añadido!");
