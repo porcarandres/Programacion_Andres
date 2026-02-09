@@ -29,7 +29,6 @@ public class ListaCompraAmpliacion {
             }
         }
 
-
         do {
             System.out.println("   Menu    ");
             System.out.println("1. Añadir producto al carro");
