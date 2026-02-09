@@ -28,9 +28,9 @@ public class ColaBanco {
                     ColaBanco.atenderPrimero();
                     break;
                 case 3:
-                    System.out.println("Introduce la posicion a eliminar:");
+                    System.out.println("Posicion a eliminar:");
                     int pos = sc.nextInt();
-                    ColaBanco.quitarDeCualquierPosicion(pos);
+                    ColaBanco.seCansó(pos);
                     break;
                 case 4:
                     System.out.println("Salir");
@@ -64,7 +64,7 @@ public class ColaBanco {
         }
     }
 
-    public void quitarDeCualquierPosicion(int posicion){
+    public void seCansó(int posicion){
         if (posicion >= 0 && posicion < cola.size()){
             cola.remove(posicion);
         }else {
