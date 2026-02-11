@@ -12,6 +12,7 @@ public class Ej1 {
         System.out.println("Valor introducido: " + num);
     } catch (InputMismatchException inputMismatchException) {
         System.out.println("Valor introducido incorrecto");
+        inputMismatchException.printStackTrace();
     }
 }
 }
