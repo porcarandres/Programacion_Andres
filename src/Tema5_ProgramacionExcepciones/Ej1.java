@@ -10,6 +10,8 @@ public class Ej1 {
     try {
         int num = sc.nextInt();
         System.out.println("Valor introducido: " + num);
+
+
     } catch (InputMismatchException inputMismatchException) {
         System.out.println("Valor introducido incorrecto");
         inputMismatchException.printStackTrace();

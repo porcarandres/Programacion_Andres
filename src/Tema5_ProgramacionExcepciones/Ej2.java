@@ -18,6 +18,8 @@ public class Ej2 {
         } catch (InputMismatchException inputMismatchException) {
             System.out.println("Error: No has introducido un número entero.");
             inputMismatchException.printStackTrace();
+
+
         } catch (ArithmeticException arithmeticException) {
             System.out.println("Error de division por cero.");
             arithmeticException.printStackTrace();
