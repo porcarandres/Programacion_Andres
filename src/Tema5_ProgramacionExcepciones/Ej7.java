@@ -9,7 +9,7 @@ public class Ej7 {
         Scanner sc = new Scanner(System.in);
         ArrayList<Gato> listaGatos = new ArrayList<>();
 
-        while (listaGatos.size() < 5) {
+        while (listaGatos.size() < 5 ) {
             try {
                 System.out.print("Nombre del gato: ");
                 String nombre = sc.next();

@@ -16,7 +16,7 @@ public class Ej2 {
             System.out.println("Resultado: " + resultado);
 
         } catch (InputMismatchException inputMismatchException) {
-            System.out.println("Error: No has introducido un número entero.");
+            System.out.println("Error: No has introducido un número entero. ");
             inputMismatchException.printStackTrace();
 
 

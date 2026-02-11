@@ -13,7 +13,7 @@ public class Ej1 {
 
 
     } catch (InputMismatchException inputMismatchException) {
-        System.out.println("Valor introducido incorrecto");
+        System.out.println("Valor introducido incorrecto ");
         inputMismatchException.printStackTrace();
     }
 }

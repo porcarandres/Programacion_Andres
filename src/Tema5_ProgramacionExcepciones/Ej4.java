@@ -20,7 +20,7 @@ public class Ej4 {
 
         while (posicion >= 0) {
             try {
-                System.out.print("Dime una posicion (negativo para salir): ");
+                System.out.print("Dime una posicion (negativo para salir):  ");
                 posicion = sc.nextInt();
 
                 if (posicion >= 0) {

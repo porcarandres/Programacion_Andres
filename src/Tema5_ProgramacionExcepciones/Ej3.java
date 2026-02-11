@@ -12,7 +12,7 @@ public class Ej3 {
         while (contador < 5) {
 
             try {
-                System.out.print("Introduce valor para posición " + contador + ": ");
+                System.out.print("Introduce valor para posición " + contador + ":  ");
                 vector[contador] = sc.nextDouble();
                 contador++;
 
