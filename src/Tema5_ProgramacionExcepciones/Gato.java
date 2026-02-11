@@ -11,20 +11,20 @@ public class Gato {
 
     public void setNombre(String nombre) throws Exception {
         if (nombre.length() < 3) {
-            throw new Exception("El nombre debe tener al menos 3 caracteres"); [cite: 716]
+            throw new Exception("El nombre debe tener al menos 3 letras");
         }
         this.nombre = nombre;
     }
 
     public void setEdad(int edad) throws Exception {
         if (edad < 0) {
-            throw new Exception("La edad no puede ser negativa"); [cite: 716]
+            throw new Exception("La edad no puede ser negativa");
         }
         this.edad = edad;
     }
 
     public void imprimir() {
-        System.out.println("Gato [Nombre=" + nombre + ", Edad=" + edad + "]");
+        System.out.println("Gato [Nombre: "+nombre+"| Edad:"+edad+"]");
     }
 }
 
@@ -34,7 +34,8 @@ public class Gato {
             try {
                 Gato gato1 = new Gato("Amador", 15);
                 gato1.imprimir();
-                gato1.setEdad(-22); // Esto lanzará excepción
+                gato1.setEdad(-22);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
