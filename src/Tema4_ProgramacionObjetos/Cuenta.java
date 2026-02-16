@@ -36,4 +36,9 @@ public class Cuenta {
          saldoDispo += abona;
     }
 
+    public String toString(){
+        return "Num:"+this.numCuenta + " | Saldo: " + this.saldoDispo + "€";
+    }
+
+
 }

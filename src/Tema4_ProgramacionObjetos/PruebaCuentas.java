@@ -27,13 +27,13 @@ public class PruebaCuentas {
                     System.out.print("Introduce el saldo inicial: ");
                     int saldoC = sc.nextInt();
 
-                    if (persona1.añadirCuenta(new Cuenta(numC, saldoC))) {
+                    if (persona1.anyadirCuenta(new Cuenta(numC, saldoC))) {
                         System.out.println("Cuenta añadida.");}
                     break;
 
                 case 3:
                     System.out.println("Datos de la persona:");
-                    System.out.println("DNI: " + persona1.toString());
+                    System.out.println("DNI: " + persona1);
                     break;
 
                 case 4:

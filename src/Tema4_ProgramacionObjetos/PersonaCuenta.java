@@ -21,36 +21,41 @@ public class PersonaCuenta {
             return dni;
         }
 
-        public boolean añadirCuenta(Cuenta nuevaCuenta){
+        public boolean anyadirCuenta(Cuenta nuevaCuenta){
+            boolean anyadida = false;
             if(contadorCuentas< cuentas.length){
                 cuentas[contadorCuentas] = nuevaCuenta;
                 contadorCuentas ++;
-                return true;
+                anyadida= true;
             } else {
                 System.out.println("Error "+dni+" ya tiene 3 cuentas.");
-                return false;
+                anyadida= false;
             }
+            return anyadida;
         }
 
         public Cuenta[] getCuentas() {
             return cuentas;
         }
         public boolean esMoroso(){
+            boolean moroso = false;
             for (int i = 0; i < contadorCuentas; i++) {
-                if (cuentas[i].setSaldoDispo() < 0){
-                    return true;
+                if (cuentas[i].setSaldoDispo() < 0) {
+                    moroso = true;
                 }
-
+                else {
+                    moroso = false;
+                }
             }
-            return false;
+            return moroso;
         }
-        public String toString() {
-        String resultado = "DNI: " + this.dni + "\n";
 
-        for (int i = 0; i < this.cuentas.length; i++) {
-            if (this.cuentas[i] != null) {
-                resultado += "Cuenta: " + this.cuentas[i].numCuenta + " Saldo: " + this.cuentas[i].setSaldoDispo()+"€\n";
-            }
+    public String toString() {
+        String resultado = "Persona con DNI: " + this.dni;
+        resultado += "Cuentas asociadas:";
+
+        for (int i = 0; i < contadorCuentas; i++) {
+            resultado += cuentas[i].toString();
         }
         return resultado;
     }
