@@ -39,6 +39,4 @@ public class Cuenta {
     public String toString(){
         return "Num:"+this.numCuenta + " | Saldo: " + this.saldoDispo + "€";
     }
-
-
 }
