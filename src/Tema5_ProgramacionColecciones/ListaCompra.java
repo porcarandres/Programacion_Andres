@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class ListaCompra {
     public static void main(String[] args) {
-        Set<String> ListaCompra = new HashSet<>();
+        Set<String> listaCompra = new HashSet<>();
         Scanner sc = new Scanner(System.in);
         String producto;
 
@@ -18,14 +18,14 @@ public class ListaCompra {
             System.out.println("Escribe el producto:");
             producto = sc.nextLine();
 
-            if(ListaCompra.contains(producto)){
+            if(listaCompra.contains(producto)){
                 System.out.println("El producto ya esta, pon otro.");
                 cantidad++;
             }
             else{
-                ListaCompra.add(producto);
+                listaCompra.add(producto);
             }
         }
-        System.out.println("La Lista contiene estos productos: "+ListaCompra);
+        System.out.println("La Lista contiene estos productos: "+listaCompra);
     }
 }

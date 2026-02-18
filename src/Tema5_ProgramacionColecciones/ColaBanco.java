@@ -5,12 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ColaBanco {
-    public static void main(String[] args){
-        ColaBanco ColaBanco = new ColaBanco();
-        Scanner sc= new Scanner(System.in);
+    public static void main(String[] args) {
+        List<UsuarioBanco> cola = new ArrayList<UsuarioBanco>();
+        Scanner sc = new Scanner(System.in);
         int opcion = 0;
 
-        // Necesitamos un bucle para que el menú se repita
         while (opcion != 4) {
             System.out.println("1. Añadir usuario");
             System.out.println("2. Atender Primero");
@@ -19,18 +18,20 @@ public class ColaBanco {
             System.out.println("   Opcion:");
 
             opcion = sc.nextInt();
+            sc.nextLine();
 
             switch (opcion) {
                 case 1:
-                    ColaBanco.anadirUsuario();
+                    anadirUsuario(sc, cola);
                     break;
                 case 2:
-                    ColaBanco.atenderPrimero();
+                    atenderPrimero(cola);
                     break;
                 case 3:
                     System.out.println("Posicion a eliminar:");
                     int pos = sc.nextInt();
-                    ColaBanco.seCanso(pos);
+                    sc.nextLine();
+                    seCanso(pos, cola);
                     break;
                 case 4:
                     System.out.println("Salir");
@@ -40,22 +41,23 @@ public class ColaBanco {
             }
         }
     }
-    List<UsuarioBanco> cola = new ArrayList<UsuarioBanco>();
-    Scanner sc= new Scanner(System.in);
 
-    public void anadirUsuario(){
+    public static void anadirUsuario(Scanner sc, List<UsuarioBanco> cola) {
         System.out.println("Añade el nombre del usuario:");
-        String nombre=sc.nextLine();
-        System.out.println("Añade el dni del usuario:");
-        String dni=sc.nextLine();
-        System.out.println("Añade la edad del usuario:");
-        int edad=sc.nextInt();
+        String nombre = sc.nextLine();
 
-        cola.add(new UsuarioBanco(nombre,dni,edad));
-        System.out.println("Datos añadidos:"+nombre+" Dni: "+dni+" Edad: "+edad);
+        System.out.println("Añade el dni del usuario:");
+        String dni = sc.nextLine();
+
+        System.out.println("Añade la edad del usuario:");
+        int edad = sc.nextInt();
+        sc.nextLine();
+
+        cola.add(new UsuarioBanco(nombre, dni, edad));
+        System.out.println("Datos añadidos:" + nombre + " Dni: " + dni + " Edad: " + edad);
     }
 
-    public void atenderPrimero() {
+    public static void atenderPrimero(List<UsuarioBanco> cola) {
         if (!cola.isEmpty()) {
             UsuarioBanco atendido = cola.remove(0);
             System.out.println("Atendiendo a: " + atendido.getNombre());
@@ -64,53 +66,12 @@ public class ColaBanco {
         }
     }
 
-    public void seCanso(int posicion){
-        if (posicion >= 0 && posicion < cola.size()){
-            cola.remove(posicion);
-        }else {
+    public static void seCanso(int posicion, List<UsuarioBanco> cola) {
+        if (posicion >= 0 && posicion < cola.size()) {
+            UsuarioBanco eliminado = cola.remove(posicion);
+            System.out.println("El usuario " + eliminado.getNombre() + " se ha cansado y se ha ido.");
+        } else {
             System.out.println("Esa posicion no esta en la cola.");
-        }
-    }
-
-    public class UsuarioBanco{
-        private String nombre;
-        private String dni;
-        private int edad;
-
-        public UsuarioBanco(String nombre,String dni, int edad) {
-            this.nombre=nombre;
-            this.dni = dni;
-            this.edad = edad;
-
-        }
-        public UsuarioBanco() {
-            this.nombre="Jose";
-            this.dni = "11111111A";
-            this.edad = 58;
-        }
-
-        public String getNombre() {
-            return nombre;
-        }
-
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-
-        public String getDni() {
-            return dni;
-        }
-
-        public void setDni(String dni) {
-            this.dni = dni;
-        }
-
-        public int getEdad() {
-            return edad;
-        }
-
-        public void setEdad(int edad) {
-            this.edad = edad;
         }
     }
 }
