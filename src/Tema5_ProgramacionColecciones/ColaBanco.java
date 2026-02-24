@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ColaBanco {
     public static void main(String[] args) {
-        List<UsuarioBanco> cola = new ArrayList<UsuarioBanco>();
+        List<UsuarioBanco> cola = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
 

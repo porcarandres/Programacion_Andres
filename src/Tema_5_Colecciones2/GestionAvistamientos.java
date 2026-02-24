@@ -15,32 +15,47 @@ public class GestionAvistamientos {
     }
 
     public void mostrarApartirDeOcho() {
-        listaAvistamientos.stream()
-                .filter(a -> a.getHora() >= 8)
-                .forEach(System.out::println);
+        for (int i = 0; i < listaAvistamientos.size(); i++) {
+            Avistamiento a = listaAvistamientos.get(i);
+            if (a.getHora() >= 8) {
+                System.out.println(a);
+            }
+        }
     }
 
     public void mostrarNocturnos() {
-        listaAvistamientos.stream()
-                .filter(a -> a.getHora() >= 20 || a.getHora() < 8)
-                .forEach(System.out::println);
+        for (int i = 0; i < listaAvistamientos.size(); i++) {
+            Avistamiento a = listaAvistamientos.get(i);
+            if (a.getHora() >= 20 || a.getHora() < 8) {
+                System.out.println(a);
+            }
+        }
     }
 
     public void mostrarManadas() {
-        listaAvistamientos.stream()
-                .filter(a -> a instanceof ManadaLobos)
-                .forEach(System.out::println);
+        for (int i = 0; i < listaAvistamientos.size(); i++) {
+            Avistamiento a = listaAvistamientos.get(i);
+            if (a instanceof ManadaLobos) {
+                System.out.println(a);
+            }
+        }
     }
 
     public void mostrarSerpientes() {
-        listaAvistamientos.stream()
-                .filter(a -> a instanceof Serpiente)
-                .forEach(System.out::println);
+        for (int i = 0; i < listaAvistamientos.size(); i++) {
+            Avistamiento a = listaAvistamientos.get(i);
+            if (a instanceof Serpiente) {
+                System.out.println(a);
+            }
+        }
     }
 
     public void mostrarPajaros() {
-        listaAvistamientos.stream()
-                .filter(a -> a instanceof Pajaro)
-                .forEach(System.out::println);
+        for (int i = 0; i < listaAvistamientos.size(); i++) {
+            Avistamiento a = listaAvistamientos.get(i);
+            if (a instanceof Pajaro) {
+                System.out.println(a);
+            }
+        }
     }
 }
