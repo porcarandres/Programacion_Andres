@@ -3,7 +3,7 @@ package Tema_5_Colecciones2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GestionAvistamientos {
+public class GestionAvistamientos { // QUITADO EL ABSTRACT
     private List<Avistamiento> listaAvistamientos;
 
     public GestionAvistamientos() {
@@ -18,7 +18,7 @@ public class GestionAvistamientos {
         for (int i = 0; i < listaAvistamientos.size(); i++) {
             Avistamiento a = listaAvistamientos.get(i);
             if (a.getHora() >= 8) {
-                System.out.println(a);
+                System.out.println(a.toString());
             }
         }
     }
@@ -27,7 +27,7 @@ public class GestionAvistamientos {
         for (int i = 0; i < listaAvistamientos.size(); i++) {
             Avistamiento a = listaAvistamientos.get(i);
             if (a.getHora() >= 20 || a.getHora() < 8) {
-                System.out.println(a);
+                System.out.println(a.toString());
             }
         }
     }
@@ -35,8 +35,8 @@ public class GestionAvistamientos {
     public void mostrarManadas() {
         for (int i = 0; i < listaAvistamientos.size(); i++) {
             Avistamiento a = listaAvistamientos.get(i);
-            if (a instanceof ManadaLobos) {
-                System.out.println(a);
+            if (a.getTipo().equals("Lobo")) {
+                System.out.println(a.toString());
             }
         }
     }
@@ -44,8 +44,8 @@ public class GestionAvistamientos {
     public void mostrarSerpientes() {
         for (int i = 0; i < listaAvistamientos.size(); i++) {
             Avistamiento a = listaAvistamientos.get(i);
-            if (a instanceof Serpiente) {
-                System.out.println(a);
+            if (a.getTipo().equals("Serpiente")) {
+                System.out.println(a.toString());
             }
         }
     }
@@ -53,9 +53,10 @@ public class GestionAvistamientos {
     public void mostrarPajaros() {
         for (int i = 0; i < listaAvistamientos.size(); i++) {
             Avistamiento a = listaAvistamientos.get(i);
-            if (a instanceof Pajaro) {
-                System.out.println(a);
+            if (a.getTipo().equals("Pajaro")) {
+                System.out.println(a.toString());
             }
         }
+
     }
 }

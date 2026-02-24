@@ -12,4 +12,8 @@ public abstract class Avistamiento {
     }
 
     public abstract String toString();
+
+    public String getTipo() {
+        return "";
+    }
 }

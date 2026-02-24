@@ -10,6 +10,8 @@ public class Pajaro extends Avistamiento {
         this.especie = especie;
     }
 
+    public String getTipo() { return "Pajaro"; }
+
     public String toString() {
         return "Hora: " + hora + " | Pájaro (" + especie + ", Peso: " + peso + "kg)";
     }

@@ -10,6 +10,8 @@ public class Serpiente extends Avistamiento {
         this.especie = especie;
     }
 
+    public String getTipo() { return "Serpiente"; }
+
     public String toString() {
         return "Hora: " + hora + " | Serpiente (" + especie + ", Longitud: " + longitud + "m)";
     }

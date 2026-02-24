@@ -9,6 +9,7 @@ public class ManadaLobos extends Avistamiento {
         this.numLobos = numLobos;
         this.observaciones = observaciones;
     }
+    public String getTipo() { return "Lobo"; }
 
     public String toString() {
         return "Hora: " + hora + " | Manada de " + numLobos + " lobos. Obs: " + observaciones;
