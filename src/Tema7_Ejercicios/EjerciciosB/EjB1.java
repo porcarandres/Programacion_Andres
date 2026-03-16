@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class EjB1 {
         public static void main(String[] args){
-
+            //Ruta del archivo
             File archivo = new File("/home/andporgui/IdeaProjects/Programacion/Programacion_Andres/src/Tema7_Ejercicios/Documentos/numeros.txt");
 
             try (Scanner lector = new Scanner(archivo)) {
