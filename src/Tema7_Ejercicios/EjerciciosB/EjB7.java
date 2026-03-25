@@ -6,7 +6,7 @@ import java.util.*;
 public class EjB7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Introduce la ruta del archivo: ");
+        System.out.print("Introduce la ruta del archivo: "); //C:\Users\Usuario\Downloads\adad.txt ejemplo de prueba
         String ruta = sc.nextLine();
 
         int nLineas = 0;
