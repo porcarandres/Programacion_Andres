@@ -10,6 +10,8 @@ public class RepasoSQL {
         String sentenciaSQL3 = "SELECT nombre,apellido FROM estudiante ORDER BY fecha_nacimiento ASC";
         String sentenciaSQL4 = "SELECT c.nombre_casa, COUNT(e.id_estudiante) AS num_estudiante FROM Casa c JOIN Estudiante e ON c.id_casa = e.id_casa GROUP BY c.nombre_casa";
         String sentenciaSQL5 = "SELECT AVG(calificacion) AS media, MAX(calificacion) AS maxima FROM Estudiante_Asignatura JOIN Asignatura ON Estudiante_Asignatura.id_asignatura = Asignatura.id_asignatura WHERE nombre_asignatura = 'Pociones'";
+        String sentenciaSQL6 = "SELECT DISTINCT anyo_curso FROM Estudiante";
+
 
         try(Connection con2 = DriverManager.getConnection("jdbc:postgresql://localhost:5432/anavicianofabregat");
             //1
@@ -50,7 +52,7 @@ public class RepasoSQL {
                 String nombre_casa= resultado4.getString("nombre_casa");
                 System.out.println("Casa: " +nombre_casa + " | Total: " + num_estudiante);
             }
-
+            //5
             PreparedStatement sentencia5 = con2.prepareStatement(sentenciaSQL5);
             ResultSet resultado5 = sentencia5.executeQuery();
 
@@ -59,6 +61,15 @@ public class RepasoSQL {
                 String maxima = resultado5.getString("maxima");
                 System.out.println("|Asignatura Pociones| --> Media: " + media + " | Maxima: " + maxima);
             }
+            //6
+            PreparedStatement sentencia6 = con2.prepareStatement(sentenciaSQL6);
+            ResultSet resultado6 = sentencia6.executeQuery();
+
+            while (resultado6.next()) {
+                int anyo_cursos = resultado6.getInt("anyo_cursos");
+                System.out.println("Curos: " + anyo_cursos);
+            }
+
 
         }
 
