@@ -6,10 +6,10 @@ public class Howarts {
 
     public static void main(String[] args) {
         String url = "jdbc:postgresql://ad-postgres.ctngpo0lxboa.us-east-1.rds.amazonaws.com:5432/hogwarts";
-        String user = "postgres";
-        String pass = "12345678";
+        String usuario = "postgres";
+        String contrasenya = "12345678";
 
-        try (Connection con = DriverManager.getConnection(url, user, pass)) {
+        try (Connection con = DriverManager.getConnection(url, usuario, contrasenya)) {
             Statement stmt = con.createStatement();
 
             // 1. Consulta por casa
